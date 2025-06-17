@@ -1,53 +1,74 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Search, MapPin } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    console.log('Searching for:', searchQuery);
+    // Backend integration point
   };
 
   return (
-    <section id="home" className="pt-20 min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+    <section id="home" className="pt-20 min-h-screen bg-gradient-to-br from-[#7CB518]/10 to-[#001F54]/5">
       <div className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Your Dream <span className="text-orange-600">Student Home</span> Awaits
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Discover premium student accommodations designed for comfort, community, and academic success. 
-              From cozy studios to shared apartments, we make finding your perfect home away from home effortless.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={scrollToContact}
-                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg rounded-lg"
-              >
-                Find Your Home
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-orange-600 text-orange-600 hover:bg-orange-50 px-8 py-6 text-lg rounded-lg"
-              >
-                View Properties
-              </Button>
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl lg:text-7xl font-bold text-[#001F54] leading-tight mb-8 animate-fade-in">
+            Find Your Perfect 
+            <span className="text-[#7CB518] block">Student Home</span>
+            Anywhere in the World
+          </h1>
+          
+          <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed animate-fade-in">
+            Discover amazing student accommodations in India, US, UK, Australia and beyond. 
+            Your home away from home is just a click away! 🏠✨
+          </p>
+
+          {/* Search Bar */}
+          <div className="max-w-2xl mx-auto mb-12 animate-scale-in">
+            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="flex-1 relative">
+                  <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#7CB518] h-5 w-5" />
+                  <Input
+                    type="text"
+                    placeholder="Enter city, university, or area..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-12 h-14 text-lg border-gray-200 focus:border-[#7CB518] focus:ring-[#7CB518]"
+                  />
+                </div>
+                <Button 
+                  onClick={handleSearch}
+                  className="bg-[#7CB518] hover:bg-[#6BA015] text-white px-8 h-14 text-lg rounded-xl transition-all duration-300 hover:scale-105"
+                >
+                  <Search className="h-5 w-5 mr-2" />
+                  Search
+                </Button>
+              </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="bg-gradient-to-br from-orange-400 to-yellow-400 rounded-3xl p-8 shadow-2xl">
-              <div className="bg-white rounded-2xl p-6 h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-4xl">🏠</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Premium Accommodations</h3>
-                  <p className="text-gray-600">Modern, furnished, and ready for students</p>
-                </div>
-              </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-[#7CB518] mb-2">50+</div>
+              <div className="text-gray-600">Cities</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-[#7CB518] mb-2">1000+</div>
+              <div className="text-gray-600">Properties</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-[#7CB518] mb-2">10K+</div>
+              <div className="text-gray-600">Happy Students</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-[#7CB518] mb-2">24/7</div>
+              <div className="text-gray-600">Support</div>
             </div>
           </div>
         </div>
