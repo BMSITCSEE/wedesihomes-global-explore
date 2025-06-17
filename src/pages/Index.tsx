@@ -12,6 +12,8 @@ import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
+  console.log('Index page rendering...');
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
