@@ -16,18 +16,39 @@ if (!rootElement) {
 
 console.log('Root element found, creating React root...');
 
+// Function to remove loading fallback
+const removeLoadingFallback = () => {
+  console.log('Attempting to remove loading fallback...');
+  const loadingElements = document.querySelectorAll('.loading-fallback');
+  console.log('Found loading elements:', loadingElements.length);
+  
+  if (loadingElements.length > 0) {
+    loadingElements.forEach((el, index) => {
+      console.log(`Removing loading element ${index + 1}`);
+      el.remove();
+    });
+    console.log('Loading fallback removed successfully');
+  } else {
+    // Fallback: clear entire root and re-render
+    console.log('No loading elements found, clearing root innerHTML');
+    rootElement.innerHTML = '';
+  }
+};
+
 try {
   const root = createRoot(rootElement);
   console.log('React root created, rendering App...');
   
+  // Remove loading immediately
+  removeLoadingFallback();
+  
   root.render(<App />);
   console.log('App rendered successfully');
   
-  // Clear any loading fallback after successful render
-  setTimeout(() => {
-    const loadingElements = document.querySelectorAll('.loading-fallback');
-    loadingElements.forEach(el => el.remove());
-  }, 100);
+  // Additional cleanup attempts
+  setTimeout(removeLoadingFallback, 50);
+  setTimeout(removeLoadingFallback, 200);
+  setTimeout(removeLoadingFallback, 500);
   
 } catch (error) {
   console.error('Error rendering app:', error);

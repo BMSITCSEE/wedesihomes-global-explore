@@ -29,7 +29,7 @@
         min-height: 100vh;
       }
       
-      /* Loading fallback */
+      /* Loading fallback - will be removed when React loads */
       .loading-fallback {
         display: flex;
         justify-content: center;
@@ -54,12 +54,17 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
+      
+      /* Hide loading once React is ready */
+      .react-ready .loading-fallback {
+        display: none !important;
+      }
     </style>
   </head>
 
   <body>
     <div id="root">
-      <div class="loading-fallback">
+      <div class="loading-fallback" id="initial-loading">
         <div class="loading-spinner"></div>
         <div>
           <h1>WEDESIHOMES</h1>
@@ -70,11 +75,52 @@
     <script type="module" src="./src/main.tsx"></script>
     
     <script>
-      // Fallback error handling for production
+      console.log('Index.html script executing...');
+      
+      // More aggressive loading timeout
+      let loadingTimeout = setTimeout(function() {
+        console.warn('Loading timeout reached, forcing removal of loading screen');
+        const root = document.getElementById('root');
+        const loading = document.getElementById('initial-loading');
+        
+        if (root && loading && root.contains(loading)) {
+          console.log('Removing stuck loading screen');
+          loading.remove();
+          
+          // If React still hasn't loaded, show error
+          if (root.children.length === 0) {
+            root.innerHTML = `
+              <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #7CB518 0%, #001F54 100%); color: white;">
+                <h1 style="margin-bottom: 1rem;">WEDESIHOMES</h1>
+                <p style="margin-bottom: 1rem;">Application took too long to load.</p>
+                <button onclick="window.location.reload()" style="padding: 10px 20px; background: white; color: #001F54; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                  Reload Page
+                </button>
+              </div>
+            `;
+          }
+        }
+      }, 5000); // 5 second timeout instead of longer
+      
+      // Clear timeout when page loads properly
+      window.addEventListener('load', function() {
+        console.log('Window load event fired');
+        clearTimeout(loadingTimeout);
+      });
+      
+      // Also clear on DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM content loaded');
+        clearTimeout(loadingTimeout);
+      });
+      
+      // Global error handling
       window.addEventListener('error', function(e) {
         console.error('Global error:', e.error);
+        clearTimeout(loadingTimeout);
+        
         const root = document.getElementById('root');
-        if (root && root.innerHTML.includes('loading-fallback')) {
+        if (root) {
           root.innerHTML = `
             <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #7CB518 0%, #001F54 100%); color: white;">
               <h1 style="margin-bottom: 1rem;">WEDESIHOMES</h1>
@@ -85,16 +131,6 @@
             </div>
           `;
         }
-      });
-      
-      // Remove loading fallback once React loads
-      window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          const root = document.getElementById('root');
-          if (root && root.innerHTML.includes('loading-fallback')) {
-            console.warn('React app may not have loaded properly');
-          }
-        }, 5000);
       });
     </script>
   </body>
