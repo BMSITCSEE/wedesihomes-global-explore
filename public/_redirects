@@ -1,2 +1,10 @@
 
+# Handle client-side routing
 /*    /index.html   200
+
+# Handle specific routes
+/index.html  /index.html  200
+/  /index.html  200
+
+# Fallback for any unmatched routes
+*  /index.html  200

@@ -18,14 +18,84 @@
     <meta name="twitter:description" content="Find your perfect student home anywhere in the world." />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="/src/main.tsx" as="script" />
+    <link rel="preload" href="./src/main.tsx" as="script" />
+    
+    <style>
+      /* Critical loading styles */
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading fallback */
+      .loading-fallback {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #7CB518 0%, #001F54 100%);
+        color: white;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255,255,255,0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 1rem;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root">
+      <div class="loading-fallback">
+        <div class="loading-spinner"></div>
+        <div>
+          <h1>WEDESIHOMES</h1>
+          <p>Loading your perfect student home...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.tsx"></script>
+    
+    <script>
+      // Fallback error handling for production
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+        const root = document.getElementById('root');
+        if (root && root.innerHTML.includes('loading-fallback')) {
+          root.innerHTML = `
+            <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #7CB518 0%, #001F54 100%); color: white;">
+              <h1 style="margin-bottom: 1rem;">WEDESIHOMES</h1>
+              <p style="margin-bottom: 1rem;">We're experiencing technical difficulties.</p>
+              <button onclick="window.location.reload()" style="padding: 10px 20px; background: white; color: #001F54; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                Reload Page
+              </button>
+            </div>
+          `;
+        }
+      });
+      
+      // Remove loading fallback once React loads
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          const root = document.getElementById('root');
+          if (root && root.innerHTML.includes('loading-fallback')) {
+            console.warn('React app may not have loaded properly');
+          }
+        }, 5000);
+      });
+    </script>
   </body>
 </html>

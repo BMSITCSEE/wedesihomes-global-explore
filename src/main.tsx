@@ -4,6 +4,8 @@ import App from './App.tsx'
 import './index.css'
 
 console.log('Main.tsx executing...');
+console.log('Environment:', import.meta.env.MODE);
+console.log('Base URL:', import.meta.env.BASE_URL);
 
 const rootElement = document.getElementById("root");
 
@@ -17,18 +19,30 @@ console.log('Root element found, creating React root...');
 try {
   const root = createRoot(rootElement);
   console.log('React root created, rendering App...');
+  
   root.render(<App />);
   console.log('App rendered successfully');
+  
+  // Clear any loading fallback after successful render
+  setTimeout(() => {
+    const loadingElements = document.querySelectorAll('.loading-fallback');
+    loadingElements.forEach(el => el.remove());
+  }, 100);
+  
 } catch (error) {
   console.error('Error rendering app:', error);
+  
+  // Enhanced error fallback for production
   rootElement.innerHTML = `
-    <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
-      <h1>Loading Error</h1>
-      <p>There was an error loading the application.</p>
-      <p>Error: ${error instanceof Error ? error.message : 'Unknown error'}</p>
-      <button onclick="window.location.reload()" style="padding: 10px 20px; margin-top: 10px;">
-        Reload Page
-      </button>
+    <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #7CB518 0%, #001F54 100%); color: white;">
+      <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; max-width: 500px;">
+        <h1 style="margin-bottom: 1rem; font-size: 2rem;">WEDESIHOMES</h1>
+        <p style="margin-bottom: 1rem; font-size: 1.1rem;">We're experiencing technical difficulties loading the application.</p>
+        <p style="margin-bottom: 1.5rem; font-size: 0.9rem; opacity: 0.8;">Error: ${error instanceof Error ? error.message : 'Unknown error'}</p>
+        <button onclick="window.location.reload()" style="padding: 12px 24px; background: white; color: #001F54; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: all 0.3s;">
+          Reload Page
+        </button>
+      </div>
     </div>
   `;
 }

@@ -10,12 +10,15 @@ import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
+import HealthCheck from '@/components/HealthCheck';
 
 const Index = () => {
   console.log('Index page rendering...');
+  console.log('Window location:', window.location.href);
 
   return (
     <div className="min-h-screen bg-white">
+      <HealthCheck />
       <Header />
       <Hero />
       <ExploreSection />
