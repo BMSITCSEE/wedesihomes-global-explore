@@ -31,28 +31,30 @@
       html, body {
         height: 100%;
         width: 100%;
+        overflow-x: hidden;
       }
       
       #root {
         min-height: 100vh;
         width: 100%;
-        display: block;
-      }
-      
-      /* Ensure content is visible */
-      .min-h-screen {
-        min-height: 100vh !important;
+        position: relative;
+        z-index: 1;
       }
       
       /* Loading fallback - will be removed when React loads */
       .loading-fallback {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
         font-family: Arial, sans-serif;
         background: linear-gradient(135deg, #7CB518 0%, #001F54 100%);
         color: white;
+        z-index: 9999;
       }
       
       .loading-spinner {
@@ -70,15 +72,23 @@
         100% { transform: rotate(360deg); }
       }
       
-      /* Hide loading once React is ready */
+      /* Hide loading once React is ready - use display none to completely remove */
       .react-ready .loading-fallback {
         display: none !important;
       }
       
-      /* Debugging styles - temporary */
-      .debug-visible {
-        border: 2px solid red !important;
-        background-color: rgba(255, 0, 0, 0.1) !important;
+      /* Ensure main content is visible when React is ready */
+      .react-ready #root {
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+      
+      /* Ensure all content is visible */
+      .react-ready #root > * {
+        opacity: 1 !important;
+        visibility: visible !important;
       }
     </style>
   </head>
@@ -106,7 +116,7 @@
           loadingElement.remove();
           document.body.classList.add('react-ready');
         }
-      }, 5000);
+      }, 3000);
       
       // Global error handling with better production error display
       window.addEventListener('error', function(e) {
@@ -138,16 +148,23 @@
           
           if (root && root.children.length > 0) {
             console.log('Content detected in root element');
-            // Add debug styling temporarily
-            const allElements = root.querySelectorAll('*');
-            console.log('Total elements found:', allElements.length);
+            // Force show content
+            root.style.opacity = '1';
+            root.style.visibility = 'visible';
+            root.style.position = 'relative';
+            root.style.zIndex = '1';
             
-            // Check if content is hidden
-            const visibleElements = Array.from(allElements).filter(el => {
-              const style = window.getComputedStyle(el);
-              return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+            // Ensure all children are visible
+            const allChildren = root.querySelectorAll('*');
+            console.log('Total elements found:', allChildren.length);
+            
+            // Force visibility on all elements
+            allChildren.forEach(el => {
+              if (el.id !== 'initial-loading') {
+                el.style.visibility = 'visible';
+                el.style.opacity = '1';
+              }
             });
-            console.log('Visible elements:', visibleElements.length);
           }
           
           if (!document.body.classList.contains('react-ready')) {
@@ -157,6 +174,7 @@
             if (loadingElement) {
               loadingElement.remove();
             }
+            document.body.classList.add('react-ready');
           }
         }, 1000);
       });

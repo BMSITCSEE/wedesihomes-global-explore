@@ -7,13 +7,14 @@ const HealthCheck = () => {
     console.log('Current URL:', window.location.href);
     console.log('Document ready state:', document.readyState);
     
-    // Simple cleanup function that only removes loading if it still exists
-    const cleanupLoading = () => {
-      console.log('HealthCheck: Checking for remaining loading elements');
-      const loadingElement = document.getElementById('initial-loading');
+    // Function to ensure content visibility
+    const ensureContentVisibility = () => {
+      console.log('HealthCheck: Ensuring content visibility');
       
+      // Remove loading element
+      const loadingElement = document.getElementById('initial-loading');
       if (loadingElement) {
-        console.log('HealthCheck: Removing remaining loading element');
+        console.log('HealthCheck: Removing loading element');
         loadingElement.remove();
       }
       
@@ -21,21 +22,41 @@ const HealthCheck = () => {
       document.body.classList.add('react-ready');
       console.log('HealthCheck: Added react-ready class to body');
       
-      // Debug: Check if content is being rendered
+      // Force visibility on root element and all content
+      const root = document.getElementById('root');
+      if (root) {
+        root.style.opacity = '1';
+        root.style.visibility = 'visible';
+        root.style.position = 'relative';
+        root.style.zIndex = '1';
+        
+        // Force visibility on all children except loading
+        const allElements = root.querySelectorAll('*:not(#initial-loading)');
+        allElements.forEach(el => {
+          const element = el as HTMLElement;
+          element.style.visibility = 'visible';
+          element.style.opacity = '1';
+        });
+        
+        console.log('HealthCheck: Forced visibility on all elements');
+      }
+      
+      // Debug: Check content after visibility fixes
       setTimeout(() => {
-        const root = document.getElementById('root');
         if (root) {
           console.log('HealthCheck: Root element HTML length:', root.innerHTML.length);
           console.log('HealthCheck: Root element children count:', root.children.length);
           
           // Check for main content elements
           const header = document.querySelector('header');
-          const main = document.querySelector('main');
           const sections = document.querySelectorAll('section');
           
           console.log('HealthCheck: Header found:', !!header);
-          console.log('HealthCheck: Main found:', !!main);
           console.log('HealthCheck: Sections found:', sections.length);
+          
+          if (header) {
+            console.log('HealthCheck: Header visible:', window.getComputedStyle(header).visibility !== 'hidden');
+          }
           
           // Check if Tailwind CSS is loaded
           const testElement = document.createElement('div');
@@ -53,11 +74,11 @@ const HealthCheck = () => {
     // Log that the app is ready
     console.log('WEDESIHOMES app components loaded successfully');
     
-    // Clean up any remaining loading elements
-    cleanupLoading();
+    // Ensure content visibility immediately
+    ensureContentVisibility();
     
-    // Ensure cleanup runs after a short delay as well
-    const timeoutId = setTimeout(cleanupLoading, 100);
+    // Also run after a short delay to catch any delayed renders
+    const timeoutId = setTimeout(ensureContentVisibility, 100);
     
     return () => clearTimeout(timeoutId);
   }, []);
