@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? "/" : "./",
+  base: "/",
   server: {
     host: "::",
     port: 8080,
@@ -19,6 +19,8 @@ export default defineConfig(({ mode }) => ({
     outDir: "dist",
     assetsDir: "assets",
     sourcemap: false,
+    minify: 'esbuild',
+    target: 'es2015',
     rollupOptions: {
       output: {
         manualChunks: undefined,
@@ -35,8 +37,6 @@ export default defineConfig(({ mode }) => ({
       },
     },
     cssCodeSplit: false,
-    minify: 'esbuild',
-    target: 'es2015',
   },
   plugins: [
     react(),

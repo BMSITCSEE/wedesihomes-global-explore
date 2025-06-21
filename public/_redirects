@@ -1,10 +1,7 @@
 
-# Handle client-side routing
+# Netlify redirects
 /*    /index.html   200
 
-# Handle specific routes
+# Handle client-side routing
 /index.html  /index.html  200
 /  /index.html  200
-
-# Fallback for any unmatched routes
-*  /index.html  200
