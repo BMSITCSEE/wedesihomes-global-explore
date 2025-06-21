@@ -7,36 +7,31 @@ const HealthCheck = () => {
     console.log('Current URL:', window.location.href);
     console.log('Document ready state:', document.readyState);
     
-    // Force remove any remaining loading screens
-    const forceRemoveLoading = () => {
-      console.log('HealthCheck: Forcing removal of loading screens');
-      const loadingElements = document.querySelectorAll('.loading-fallback');
-      loadingElements.forEach((el, index) => {
-        console.log(`HealthCheck: Removing loading element ${index + 1}`);
-        el.remove();
-      });
+    // Simple cleanup function that only removes loading if it still exists
+    const cleanupLoading = () => {
+      console.log('HealthCheck: Checking for remaining loading elements');
+      const loadingElement = document.getElementById('initial-loading');
+      
+      if (loadingElement) {
+        console.log('HealthCheck: Removing remaining loading element');
+        loadingElement.remove();
+      }
       
       // Mark body as react-ready
       document.body.classList.add('react-ready');
       console.log('HealthCheck: Added react-ready class to body');
     };
     
-    // Log that the app is fully loaded
-    const logAppStatus = () => {
-      console.log('WEDESIHOMES app fully loaded and operational');
-      console.log('All components rendered successfully');
-      forceRemoveLoading();
-    };
+    // Log that the app is ready
+    console.log('WEDESIHOMES app components loaded successfully');
     
-    // Execute immediately
-    forceRemoveLoading();
+    // Clean up any remaining loading elements
+    cleanupLoading();
     
-    if (document.readyState === 'complete') {
-      logAppStatus();
-    } else {
-      window.addEventListener('load', logAppStatus);
-      return () => window.removeEventListener('load', logAppStatus);
-    }
+    // Ensure cleanup runs after a short delay as well
+    const timeoutId = setTimeout(cleanupLoading, 100);
+    
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return null; // This component doesn't render anything visible
