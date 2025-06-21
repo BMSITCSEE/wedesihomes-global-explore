@@ -20,6 +20,34 @@ const HealthCheck = () => {
       // Mark body as react-ready
       document.body.classList.add('react-ready');
       console.log('HealthCheck: Added react-ready class to body');
+      
+      // Debug: Check if content is being rendered
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root) {
+          console.log('HealthCheck: Root element HTML length:', root.innerHTML.length);
+          console.log('HealthCheck: Root element children count:', root.children.length);
+          
+          // Check for main content elements
+          const header = document.querySelector('header');
+          const main = document.querySelector('main');
+          const sections = document.querySelectorAll('section');
+          
+          console.log('HealthCheck: Header found:', !!header);
+          console.log('HealthCheck: Main found:', !!main);
+          console.log('HealthCheck: Sections found:', sections.length);
+          
+          // Check if Tailwind CSS is loaded
+          const testElement = document.createElement('div');
+          testElement.className = 'bg-red-500';
+          testElement.style.display = 'none';
+          document.body.appendChild(testElement);
+          const bgColor = window.getComputedStyle(testElement).backgroundColor;
+          document.body.removeChild(testElement);
+          
+          console.log('HealthCheck: Tailwind CSS working:', bgColor.includes('rgb(239, 68, 68)') || bgColor.includes('239'));
+        }
+      }, 500);
     };
     
     // Log that the app is ready
