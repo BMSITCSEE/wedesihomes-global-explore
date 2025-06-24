@@ -8,8 +8,8 @@ connectDB();
 
 // Start server
 app.listen(PORT, () => {
-  console.log(🚀 Server running on port ${PORT});
-  console.log(🌍 Environment: ${process.env.NODE_ENV || 'development'});
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
 // Handle unhandled promise rejections
@@ -18,3 +18,4 @@ process.on('unhandledRejection', (err) => {
   // Close server & exit process
   process.exit(1);
 });
+
