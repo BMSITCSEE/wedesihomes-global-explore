@@ -1,0 +1,135 @@
+{
+  "name": "wedesihomes-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WEDESIHOMES - Global student accommodation platform frontend",
+  "author": "WEDESIHOMES Team",
+  "license": "MIT",
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.0",
+    "@chakra-ui/icons": "^2.1.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/poppins": "^5.0.0",
+    "@fontsource/inter": "^5.0.0",
+    "framer-motion": "^10.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.0",
+    "react-scripts": "5.0.1",
+    "axios": "^1.4.0",
+    "react-hook-form": "^7.44.0",
+    "react-icons": "^4.8.0",
+    "swiper": "^9.3.0",
+    "react-countup": "^6.4.2",
+    "react-intersection-observer": "^9.5.2",
+    "react-hot-toast": "^2.4.1",
+    "react-select": "^5.7.3",
+    "react-datepicker": "^4.16.0",
+    "react-image-gallery": "^1.3.0",
+    "react-lazy-load-image-component": "^1.6.0",
+    "@hookform/resolvers": "^3.1.1",
+    "yup": "^1.2.0",
+    "date-fns": "^2.30.0",
+    "lodash.debounce": "^4.0.8",
+    "query-string": "^8.1.0",
+    "react-helmet-async": "^1.3.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "recharts": "^2.7.2",
+    "react-player": "^2.12.0",
+    "react-share": "^4.4.1",
+    "web-vitals": "^3.3.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.2",
+    "eslint": "^8.43.0",
+    "eslint-config-react-app": "^7.0.1",
+    "prettier": "^2.8.8",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "serve": "^14.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src//*.{js,jsx}",
+    "lint:fix": "eslint src//*.{js,jsx} --fix",
+    "format": "prettier --write \"src//*.{js,jsx,json,css,md}\"",
+    "serve": "serve -s build -l 3000",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "warn",
+      "react/prop-types": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000",
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "jsxSingleQuote": false,
+    "bracketSpacing": true,
+    "arrowParens": "always"
+  },
+  "lint-staged": {
+    "src//*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src//*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@chakra-ui|@emotion|framer-motion)/)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wedesihomes/wedesihomes-web.git"
+  },
+  "keywords": [
+    "student-accommodation",
+    "student-housing",
+    "react",
+    "chakra-ui",
+    "real-estate",
+    "property-management"
+  ]
+}
