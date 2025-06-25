@@ -7,7 +7,6 @@ import {
   Button,
   Stack,
   Flex,
-  Image,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -16,7 +15,10 @@ const MotionBox = motion(Box);
 const HeroSection = () => {
   return (
     <Box
-      bg="linear-gradient(135deg, #E8F5E9 0%, #E3F2FD 100%)"
+      bgImage="url('/hero-banner.jpg')"
+      bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
       minH="70vh"
       position="relative"
       overflow="hidden"
@@ -47,7 +49,7 @@ const HeroSection = () => {
                 Anywhere 🏡
               </Heading>
             </MotionBox>
-            
+
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +60,7 @@ const HeroSection = () => {
                 Safe, affordable, and just a click away! ✨
               </Text>
             </MotionBox>
-            
+
             <MotionBox
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -74,21 +76,6 @@ const HeroSection = () => {
               </Stack>
             </MotionBox>
           </Stack>
-          
-          <Box flex={1} display={{ base: 'none', lg: 'block' }}>
-            <MotionBox
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Image
-                src="/hero-banner.jpg"
-                alt="Students in accommodation"
-                borderRadius="2xl"
-                boxShadow="2xl"
-              />
-            </MotionBox>
-          </Box>
         </Flex>
       </Container>
     </Box>
