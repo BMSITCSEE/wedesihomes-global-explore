@@ -18,10 +18,10 @@ const countries = [
     name: 'Ireland',
     flag: '🇮🇪',
     cities: [
-      { name: 'Dublin', properties: 120, image: '/assets/ireland/dublin.jpg' },
-      { name: 'Galway', properties: 95, image: '/assets/ireland/galway.jpg' },
-      { name: 'Cork', properties: 80, image: '/assets/ireland/cork.jpg' },
-      { name: 'Dublin Castle', properties: 50, image: '/assets/ireland/dublin-castle.jpg' },
+      { name: 'Dublin', properties: 120, image: '/assets/dublin.jpg' },
+      { name: 'Galway', properties: 95, image: '/assets/galway.jpg' },
+      { name: 'Cork', properties: 80, image: '/assets/cork.jpg' },
+      { name: 'Dublin Castle', properties: 50, image: '/assets/dublin-castle.jpg' },
     ],
   },
   {
@@ -38,10 +38,10 @@ const countries = [
     name: 'New Zealand',
     flag: '🇳🇿',
     cities: [
-      { name: 'Auckland', properties: 150, image: '/assets/nz/auckland.jpg' },
-      { name: 'Sky Tower', properties: 60, image: '/assets/nz/sky-tower.jpg' },
-      { name: 'NZ Museum', properties: 70, image: '/assets/nz/nz-museum.jpg' },
-      { name: 'Christchurch', properties: 50, image: '/assets/nz/christchurch.jpg' },
+      { name: 'Auckland', properties: 150, image: '/assets/auckland.jpg' },
+      { name: 'Sky Tower', properties: 60, image: '/assets/sky-tower.jpg' },
+      { name: 'NZ Museum', properties: 70, image: '/assets/nz-museum.jpg' },
+      { name: 'Christchurch', properties: 50, image: '/assets/christchurch.jpg' },
     ],
   },
   {
