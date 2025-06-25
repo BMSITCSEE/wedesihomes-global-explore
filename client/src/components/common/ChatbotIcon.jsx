@@ -24,37 +24,36 @@ const ChatbotIcon = () => {
   return (
     <>
       {/* Floating Chat Button */}
-      {!isOpen && (
-        <MotionBox
-          position="fixed"
-          bottom={4}
-          right={4}
-          zIndex={100}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Tooltip label="Need help? Chat with us!" placement="left">
-            <IconButton
-              icon={<ChatIcon />}
-              size="lg"
-              colorScheme="green"
-              borderRadius="full"
-              boxShadow="lg"
-              onClick={onToggle}
-              aria-label="Open chat"
-            />
-          </Tooltip>
-        </MotionBox>
-      )}
+      <MotionBox
+        position="fixed"
+        bottom={4}
+        right={4}
+        zIndex={100}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Tooltip label="Need help? Chat with us!" placement="left">
+          <IconButton
+            icon={<ChatIcon />}
+            size="lg"
+            colorScheme="green"
+            borderRadius="full"
+            boxShadow="lg"
+            onClick={onToggle}
+            aria-label="Open chat"
+          />
+        </Tooltip>
+      </MotionBox>
 
       {/* Chat Window */}
-      <Slide direction="bottom" in={isOpen} style={{ zIndex: 99 }}>
+      <Slide direction="bottom" in={isOpen} unmountOnExit style={{ zIndex: 99 }}>
         <Box
           position="fixed"
-          bottom={20}
-          right={4}
-          w="350px"
+          bottom={{ base: '60px', md: '20px' }}
+          right={{ base: '10px', md: '20px' }}
+          w={{ base: '90%', md: '350px' }}
           h="500px"
+          maxH="80vh"
           bg="white"
           borderRadius="2xl"
           boxShadow="2xl"
