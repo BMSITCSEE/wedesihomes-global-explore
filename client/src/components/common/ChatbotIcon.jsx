@@ -24,26 +24,28 @@ const ChatbotIcon = () => {
   return (
     <>
       {/* Floating Chat Button */}
-      <MotionBox
-        position="fixed"
-        bottom={4}
-        right={4}
-        zIndex={100}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <Tooltip label="Need help? Chat with us!" placement="left">
-          <IconButton
-            icon={<ChatIcon />}
-            size="lg"
-            colorScheme="green"
-            borderRadius="full"
-            boxShadow="lg"
-            onClick={onToggle}
-            aria-label="Open chat"
-          />
-        </Tooltip>
-      </MotionBox>
+      {!isOpen && (
+        <MotionBox
+          position="fixed"
+          bottom={4}
+          right={4}
+          zIndex={100}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <Tooltip label="Need help? Chat with us!" placement="left">
+            <IconButton
+              icon={<ChatIcon />}
+              size="lg"
+              colorScheme="green"
+              borderRadius="full"
+              boxShadow="lg"
+              onClick={onToggle}
+              aria-label="Open chat"
+            />
+          </Tooltip>
+        </MotionBox>
+      )}
 
       {/* Chat Window */}
       <Slide direction="bottom" in={isOpen} style={{ zIndex: 99 }}>
