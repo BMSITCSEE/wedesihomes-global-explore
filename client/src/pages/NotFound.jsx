@@ -7,6 +7,7 @@ import {
   Button,
   VStack,
   Image,
+  HStack
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
