@@ -64,7 +64,8 @@
     "format": "prettier --write \"src//*.{js,jsx,json,css,md}\"",
     "serve": "serve -s build -l 3000",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "prepare": "husky install"
+    "prepare": "test \"$VERCEL\" != \"1\" && husky install || echo 'Skipping husky on Vercel'"
+
   },
   "eslintConfig": {
     "extends": [
