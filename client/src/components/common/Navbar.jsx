@@ -93,7 +93,7 @@ const Navbar = () => {
             <Flex alignItems="center">
               <HStack spacing={4}>
                 <Button
-                  variant="ghost"
+                  variant="primary"
                   size="sm"
                   onClick={() => handleAuthClick('login')}
                 >
