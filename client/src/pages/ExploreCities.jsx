@@ -28,10 +28,10 @@ const countries = [
     name: 'UK',
     flag: '🇬🇧',
     cities: [
-      { name: 'London', properties: 250, image: '/assets/uk/london.jpg' },
-      { name: 'Manchester', properties: 120, image: '/assets/uk/manchester.jpg' },
-      { name: 'Birmingham', properties: 90, image: '/assets/uk/birmingham.jpg' },
-      { name: 'Edinburgh', properties: 75, image: '/assets/uk/edinburgh.jpg' },
+      { name: 'London', properties: 250, image: '/assets/london.jpg' },
+      { name: 'Manchester', properties: 120, image: '/assets/manchester.jpg' },
+      { name: 'Birmingham', properties: 90, image: '/assets/birmingham.jpg' },
+      { name: 'Edinburgh', properties: 75, image: '/assets/edinburgh.jpg' },
     ],
   },
   {
@@ -48,10 +48,10 @@ const countries = [
     name: 'Australia',
     flag: '🇦🇺',
     cities: [
-      { name: 'Sydney', properties: 200, image: '/assets/au/sydney.jpg' },
-      { name: 'Melbourne', properties: 180, image: '/assets/au/melbourne.jpg' },
-      { name: 'Brisbane', properties: 100, image: '/assets/au/brisbane.jpg' },
-      { name: 'Perth', properties: 70, image: '/assets/au/perth.jpg' },
+      { name: 'Sydney', properties: 200, image: '/assets/sydney.jpg' },
+      { name: 'Melbourne', properties: 180, image: '/assets/melbourne.jpg' },
+      { name: 'Brisbane', properties: 100, image: '/assets/brisbane.jpg' },
+      { name: 'Perth', properties: 70, image: '/assets/perth.jpg' },
     ],
   },
 ];
