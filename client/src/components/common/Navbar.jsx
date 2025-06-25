@@ -14,7 +14,6 @@ import {
   Image,
   Container,
   Link as ChakraLink,
-  Text,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
@@ -51,23 +50,13 @@ const Navbar = () => {
               display={{ md: 'none' }}
               onClick={isOpen ? onClose : onOpen}
             />
-            
+
             <HStack spacing={8} alignItems="center">
-              {/* ✅ LOGO + STACKED TEXT */}
+              {/* ✅ Logo only */}
               <Link to="/">
-                <Flex align="center">
-                  <Image src="/logo.png" alt="WEDESIHOMES" h="40px" mr={2} />
-                  <Box lineHeight="1">
-                    <Text fontWeight="bold" fontSize="lg">
-                      WEDESI
-                    </Text>
-                    <Text fontWeight="bold" fontSize="lg">
-                      HOMES
-                    </Text>
-                  </Box>
-                </Flex>
+                <Image src="/logo.png" alt="WEDESIHOMES" h="40px" />
               </Link>
-              
+
               <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
                 {Links.map((link) => (
                   <ChakraLink
@@ -89,7 +78,7 @@ const Navbar = () => {
                 ))}
               </HStack>
             </HStack>
-            
+
             <Flex alignItems="center">
               <HStack spacing={4}>
                 <Button
@@ -109,7 +98,7 @@ const Navbar = () => {
               </HStack>
             </Flex>
           </Flex>
-          
+
           {isOpen ? (
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as="nav" spacing={4}>
@@ -128,7 +117,7 @@ const Navbar = () => {
           ) : null}
         </Container>
       </Box>
-      
+
       <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
