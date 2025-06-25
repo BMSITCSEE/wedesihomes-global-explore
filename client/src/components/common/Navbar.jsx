@@ -53,7 +53,7 @@ const Navbar = () => {
             
             <HStack spacing={8} alignItems="center">
               <Link to="/">
-                <Image src="/assets/logo.png" alt="WEDESIHOMES" h="40px" />
+                <Image src="/logo.png" alt="WEDESIHOMES" h="40px" />
               </Link>
               
               <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
