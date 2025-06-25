@@ -15,43 +15,43 @@ import CountrySection from '../components/cities/CountrySection';
 
 const countries = [
   {
-    name: 'India',
-    flag: '🇮🇳',
+    name: 'Ireland',
+    flag: '🇮🇪',
     cities: [
-      { name: 'Mumbai', properties: 120, image: '/api/placeholder/300/200' },
-      { name: 'Delhi', properties: 95, image: '/api/placeholder/300/200' },
-      { name: 'Bangalore', properties: 150, image: '/api/placeholder/300/200' },
-      { name: 'Pune', properties: 80, image: '/api/placeholder/300/200' },
+      { name: 'Dublin', properties: 120, image: '/assets/ireland/dublin.jpg' },
+      { name: 'Galway', properties: 95, image: '/assets/ireland/galway.jpg' },
+      { name: 'Cork', properties: 80, image: '/assets/ireland/cork.jpg' },
+      { name: 'Dublin Castle', properties: 50, image: '/assets/ireland/dublin-castle.jpg' },
     ],
   },
   {
     name: 'UK',
     flag: '🇬🇧',
     cities: [
-      { name: 'London', properties: 250, image: '/api/placeholder/300/200' },
-      { name: 'Manchester', properties: 120, image: '/api/placeholder/300/200' },
-      { name: 'Birmingham', properties: 90, image: '/api/placeholder/300/200' },
-      { name: 'Edinburgh', properties: 75, image: '/api/placeholder/300/200' },
+      { name: 'London', properties: 250, image: '/assets/uk/london.jpg' },
+      { name: 'Manchester', properties: 120, image: '/assets/uk/manchester.jpg' },
+      { name: 'Birmingham', properties: 90, image: '/assets/uk/birmingham.jpg' },
+      { name: 'Edinburgh', properties: 75, image: '/assets/uk/edinburgh.jpg' },
     ],
   },
   {
-    name: 'USA',
-    flag: '🇺🇸',
+    name: 'New Zealand',
+    flag: '🇳🇿',
     cities: [
-      { name: 'New York', properties: 300, image: '/api/placeholder/300/200' },
-      { name: 'Los Angeles', properties: 180, image: '/api/placeholder/300/200' },
-      { name: 'Chicago', properties: 140, image: '/api/placeholder/300/200' },
-      { name: 'Boston', properties: 110, image: '/api/placeholder/300/200' },
+      { name: 'Auckland', properties: 150, image: '/assets/nz/auckland.jpg' },
+      { name: 'Sky Tower', properties: 60, image: '/assets/nz/sky-tower.jpg' },
+      { name: 'NZ Museum', properties: 70, image: '/assets/nz/nz-museum.jpg' },
+      { name: 'Christchurch', properties: 50, image: '/assets/nz/christchurch.jpg' },
     ],
   },
   {
     name: 'Australia',
     flag: '🇦🇺',
     cities: [
-      { name: 'Sydney', properties: 200, image: '/api/placeholder/300/200' },
-      { name: 'Melbourne', properties: 180, image: '/api/placeholder/300/200' },
-      { name: 'Brisbane', properties: 100, image: '/api/placeholder/300/200' },
-      { name: 'Perth', properties: 70, image: '/api/placeholder/300/200' },
+      { name: 'Sydney', properties: 200, image: '/assets/au/sydney.jpg' },
+      { name: 'Melbourne', properties: 180, image: '/assets/au/melbourne.jpg' },
+      { name: 'Brisbane', properties: 100, image: '/assets/au/brisbane.jpg' },
+      { name: 'Perth', properties: 70, image: '/assets/au/perth.jpg' },
     ],
   },
 ];
