@@ -6,7 +6,6 @@ import {
   Text,
   Button,
   Stack,
-  Flex,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -23,60 +22,70 @@ const HeroSection = () => {
       position="relative"
       overflow="hidden"
     >
-      <Container maxW="container.xl" h="full">
-        <Flex
+      {/* Overlay for darkening background */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        width="100%"
+        height="100%"
+        bg="rgba(0, 0, 0, 0.4)"
+        zIndex="1"
+      />
+
+      <Container maxW="container.xl" h="full" position="relative" zIndex="2">
+        <Stack
           h="full"
-          align="center"
-          justify="space-between"
-          direction={{ base: 'column', lg: 'row' }}
+          align="flex-start"
+          justify="center"
+          spacing={6}
+          maxW="2xl"
           py={20}
         >
-          <Stack spacing={6} maxW="lg" flex={1}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Heading
+              fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
+              color="white"
+              lineHeight="shorter"
             >
-              <Heading
-                fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
-                color="brand.navyBlue"
-                lineHeight="shorter"
-              >
-                Find Your Perfect
-                <Text as="span" color="brand.parrotGreen">
-                  {' '}Student Home{' '}
-                </Text>
-                Anywhere 🏡
-              </Heading>
-            </MotionBox>
-
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Text fontSize="xl" color="gray.600">
-                Verified student accommodations in 50+ cities worldwide.
-                Safe, affordable, and just a click away! ✨
+              Find Your Perfect
+              <Text as="span" color="brand.parrotGreen">
+                {' '}Student Home{' '}
               </Text>
-            </MotionBox>
+              Anywhere 🏡
+            </Heading>
+          </MotionBox>
 
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
-                <Button variant="primary" size="lg">
-                  Explore Cities 🚀
-                </Button>
-                <Button variant="secondary" size="lg">
-                  How It Works
-                </Button>
-              </Stack>
-            </MotionBox>
-          </Stack>
-        </Flex>
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Text fontSize="xl" color="gray.100">
+              Verified student accommodations in 50+ cities worldwide.
+              Safe, affordable, and just a click away! ✨
+            </Text>
+          </MotionBox>
+
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
+              <Button variant="primary" size="lg">
+                Explore Cities 🚀
+              </Button>
+              <Button variant="secondary" size="lg">
+                How It Works
+              </Button>
+            </Stack>
+          </MotionBox>
+        </Stack>
       </Container>
     </Box>
   );
