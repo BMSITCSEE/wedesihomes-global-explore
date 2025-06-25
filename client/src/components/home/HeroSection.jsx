@@ -82,7 +82,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Image
-                src="/api/placeholder/600/400"
+                src="/hero-banner.jpg"
                 alt="Students in accommodation"
                 borderRadius="2xl"
                 boxShadow="2xl"
