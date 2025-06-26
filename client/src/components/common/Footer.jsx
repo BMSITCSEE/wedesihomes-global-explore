@@ -88,13 +88,13 @@ const Footer = () => {
               London
             </Link>
             <Link fontSize="sm" _hover={{ color: 'brand.parrotGreen' }}>
-              New York
+              Auckland
             </Link>
             <Link fontSize="sm" _hover={{ color: 'brand.parrotGreen' }}>
               Sydney
             </Link>
             <Link fontSize="sm" _hover={{ color: 'brand.parrotGreen' }}>
-              Mumbai
+              Dublin
             </Link>
           </VStack>
 
