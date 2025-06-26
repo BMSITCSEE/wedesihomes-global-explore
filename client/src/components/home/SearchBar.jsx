@@ -13,12 +13,20 @@ import {
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // ✅ added
 
 const MotionBox = motion(Box);
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const navigate = useNavigate(); // ✅ added
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/explore-cities?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   return (
     <MotionBox
@@ -58,6 +66,7 @@ const SearchBar = () => {
                 borderRadius="full"
                 focusBorderColor="brand.parrotGreen"
                 _hover={{ borderColor: 'brand.parrotGreen' }}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearch()} // ✅ enter press
               />
             </InputGroup>
             <Button
@@ -65,6 +74,7 @@ const SearchBar = () => {
               size="lg"
               px={8}
               width={{ base: 'full', md: 'auto' }}
+              onClick={handleSearch} // ✅ search button
             >
               Search Now
             </Button>
