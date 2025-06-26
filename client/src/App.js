@@ -15,8 +15,9 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import NotFound from './pages/NotFound';
 
-import Login from './pages/Login';         // ✅ added
-import Register from './pages/Register';   // ✅ added
+// ✅ Updated imports
+import LoginForm from './components/auth/LoginForm';
+import SignupForm from './components/auth/SignupForm';
 
 import { AuthProvider } from './context/AuthContext';
 
@@ -34,9 +35,9 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
 
-            {/* ✅ Auth routes */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Register />} />
+            {/* ✅ Updated Auth routes */}
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignupForm />} />
 
             {/* ❌ Fallback route */}
             <Route path="*" element={<NotFound />} />
