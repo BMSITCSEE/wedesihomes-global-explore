@@ -67,7 +67,7 @@ const HeroSection = () => {
           >
             <Text fontSize="xl" color="gray.100">
               Verified student accommodations in 50+ cities worldwide.
-              Safe, affordable, and just a click away! ✨
+              Safe, affordable, and just a click away! 
             </Text>
           </MotionBox>
 
@@ -78,7 +78,7 @@ const HeroSection = () => {
           >
             <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
               <Button variant="primary" size="lg">
-                Explore Cities 🚀
+                Explore Cities 
               </Button>
               <Button variant="secondary" size="lg">
                 How It Works
