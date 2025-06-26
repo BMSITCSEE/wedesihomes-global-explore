@@ -121,7 +121,7 @@ const Footer = () => {
         <Divider my={8} borderColor="whiteAlpha.300" />
 
         <Text textAlign="center" fontSize="sm" color="gray.400">
-          © 2024 WEDESIHOMES. All rights reserved. Made with ❤ for students worldwide.
+          © 2025 WEDESI HOMES. All rights reserved. Made with ❤ for students worldwide.
         </Text>
       </Container>
     </Box>
