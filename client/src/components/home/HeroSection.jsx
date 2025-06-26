@@ -83,7 +83,7 @@ const HeroSection = () => {
                 variant="primary"
                 size="lg"
               >
-                Explore Cities 🚀
+                Explore Cities 
               </Button>
               <Button
                 as={RouterLink}
