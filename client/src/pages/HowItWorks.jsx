@@ -25,7 +25,7 @@ const HowItWorksPage = () => {
         'Check real student reviews',
         'Compare different options',
       ],
-      image: '/api/placeholder/500/400',
+      image: '/assets/searchanddiscover.jpg' ,
     },
     {
       title: 'Connect & Explore ❤',
@@ -36,7 +36,7 @@ const HowItWorksPage = () => {
         'Ask questions about amenities',
         'Get instant responses',
       ],
-      image: '/api/placeholder/500/400',
+      image: '/assets/connectandexplore.jpg' ,
     },
     {
       title: 'Book & Move In 🔑',
@@ -47,7 +47,7 @@ const HowItWorksPage = () => {
         'Move-in checklist provided',
         '24/7 support available',
       ],
-      image: '/api/placeholder/500/400',
+      image: '/assets/bookandmovein.jpg' ,
     },
   ];
 
