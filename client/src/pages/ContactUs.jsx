@@ -21,25 +21,25 @@ const ContactUs = () => {
     {
       icon: FaPhone,
       title: 'Phone',
-      details: '+1 (555) 123-4567',
+      details: '9211787788',
       color: 'brand.parrotGreen',
     },
     {
       icon: FaEnvelope,
       title: 'Email',
-      details: 'hello@wedesihomes.com',
+      details: 'wedesihomes@gmail.com',
       color: 'brand.navyBlue',
     },
     {
       icon: FaMapMarkerAlt,
       title: 'Address',
-      details: '123 Student Street, London, UK',
+      details: 'A6 1903 Amrapali Golf Homes',
       color: 'brand.parrotGreen',
     },
     {
       icon: FaWhatsapp,
       title: 'WhatsApp',
-      details: '+1 (555) 987-6543',
+      details: '9211797788',
       color: 'brand.navyBlue',
     },
   ];
