@@ -2,9 +2,11 @@ import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import theme from './theme/theme';
+
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import ChatbotIcon from './components/common/ChatbotIcon';
+
 import Home from './pages/Home';
 import ExploreCities from './pages/ExploreCities';
 import HowItWorks from './pages/HowItWorks';
@@ -12,6 +14,10 @@ import ForPropertyOwners from './pages/ForPropertyOwners';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import NotFound from './pages/NotFound';
+
+import Login from './pages/Login';         // ✅ added
+import Register from './pages/Register';   // ✅ added
+
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -27,6 +33,12 @@ function App() {
             <Route path="/for-property-owners" element={<ForPropertyOwners />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
+
+            {/* ✅ Auth routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Register />} />
+
+            {/* ❌ Fallback route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
