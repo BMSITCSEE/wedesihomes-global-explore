@@ -138,7 +138,7 @@ const Testimonials = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.600">
-                Join thousands of happy students who found their perfect home with WEDESIHOMES
+                Join thousands of happy students who found their perfect home with WEDESI HOMES
               </Text>
             </MotionBox>
           </VStack>
