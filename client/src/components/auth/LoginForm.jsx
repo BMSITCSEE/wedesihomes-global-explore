@@ -12,21 +12,45 @@ import {
   InputGroup,
   InputRightElement,
   IconButton,
+  useToast,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const toast = useToast();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login:', formData);
+    setLoading(true);
+    setError('');
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/auth/login`,
+        formData,
+        { withCredentials: true }
+      );
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      toast({
+        title: 'Login successful',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+      onClose?.();
+      navigate('/');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Login failed');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -62,40 +86,23 @@ const LoginForm = ({ onClose }) => {
         </InputGroup>
       </FormControl>
 
-      <HStack justify="space-between"  w="full">
-       
-        <Link color="brand.parrotGreen" fontSize="sm">
-          Forgot Password?
-        </Link>
+      {error && <Text color="red.500" fontSize="sm">{error}</Text>}
+
+      <HStack justify="space-between" w="full">
+        <Link color="brand.parrotGreen" fontSize="sm">Forgot Password?</Link>
       </HStack>
 
-      <Button variant="primary" type="submit" w="full" size="lg">
+      <Button variant="primary" type="submit" w="full" size="lg" isLoading={loading}>
         Login
       </Button>
 
       <Divider />
 
-      <Text fontSize="sm" color="gray.600">
-        Or continue with
-      </Text>
+      <Text fontSize="sm" color="gray.600">Or continue with</Text>
 
       <HStack spacing={4} w="full">
-        <Button
-          leftIcon={<FaGoogle />}
-          variant="outline"
-          flex={1}
-          colorScheme="red"
-        >
-          Google
-        </Button>
-        <Button
-          leftIcon={<FaFacebook />}
-          variant="outline"
-          flex={1}
-          colorScheme="facebook"
-        >
-          Facebook
-        </Button>
+        <Button leftIcon={<FaGoogle />} variant="outline" flex={1} colorScheme="red">Google</Button>
+        <Button leftIcon={<FaFacebook />} variant="outline" flex={1} colorScheme="facebook">Facebook</Button>
       </HStack>
     </VStack>
   );
