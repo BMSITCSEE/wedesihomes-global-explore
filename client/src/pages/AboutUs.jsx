@@ -102,7 +102,7 @@ const AboutUs = () => {
               </Text>
             </VStack>
             <Image
-              src="/api/placeholder/500/400"
+              src="/assets/studentsinaccom.jpg"
               alt="Students in accommodation"
               borderRadius="2xl"
               boxShadow="xl"
