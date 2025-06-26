@@ -8,6 +8,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { Link as RouterLink } from 'react-router-dom'; // ✅ added
 
 const MotionBox = motion(Box);
 
@@ -22,7 +23,6 @@ const HeroSection = () => {
       position="relative"
       overflow="hidden"
     >
-      {/* Overlay for darkening background */}
       <Box
         position="absolute"
         top="0"
@@ -67,7 +67,7 @@ const HeroSection = () => {
           >
             <Text fontSize="xl" color="gray.100">
               Verified student accommodations in 50+ cities worldwide.
-              Safe, affordable, and just a click away! 
+              Safe, affordable, and just a click away!
             </Text>
           </MotionBox>
 
@@ -77,10 +77,20 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
-              <Button variant="primary" size="lg">
-                Explore Cities 
+              <Button
+                as={RouterLink}
+                to="/explore-cities"
+                variant="primary"
+                size="lg"
+              >
+                Explore Cities 🚀
               </Button>
-              <Button variant="secondary" size="lg">
+              <Button
+                as={RouterLink}
+                to="/how-it-works"
+                variant="secondary"
+                size="lg"
+              >
                 How It Works
               </Button>
             </Stack>
