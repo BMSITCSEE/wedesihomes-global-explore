@@ -27,42 +27,46 @@ const Footer = () => {
               Making student accommodation search simple, safe, and affordable worldwide.
             </Text>
             <HStack spacing={3}>
-              <IconButton
-                icon={<FaFacebook />}
-                variant="ghost"
-                colorScheme="whiteAlpha"
-                aria-label="Facebook"
-              />
-              <IconButton
-                icon={<FaTwitter />}
-                variant="ghost"
-                colorScheme="whiteAlpha"
-                aria-label="Twitter"
-              />
-              <a href="https://www.instagram.com/wedesihomes/" target="_blank" rel="noopener noreferrer">
-  <IconButton
-    icon={<FaInstagram />}
-    variant="ghost"
-    colorScheme="whiteAlpha"
-    aria-label="Instagram"
-  />
-</a>
+  <IconButton
+    icon={<FaFacebook />}
+    variant="ghost"
+    colorScheme="whiteAlpha"
+    aria-label="Facebook"
+  />
+  <IconButton
+    icon={<FaTwitter />}
+    variant="ghost"
+    colorScheme="whiteAlpha"
+    aria-label="Twitter"
+  />
+  <IconButton
+    as="a"
+    href="https://www.instagram.com/wedesihomes/"
+    target="_blank"
+    rel="noopener noreferrer"
+    icon={<FaInstagram />}
+    variant="ghost"
+    colorScheme="whiteAlpha"
+    aria-label="Instagram"
+  />
+  <IconButton
+    as="a"
+    href="https://www.linkedin.com/in/wedesi-homes-1aa23a371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    target="_blank"
+    rel="noopener noreferrer"
+    icon={<FaLinkedin />}
+    variant="ghost"
+    colorScheme="whiteAlpha"
+    aria-label="LinkedIn"
+  />
+  <IconButton
+    icon={<FaYoutube />}
+    variant="ghost"
+    colorScheme="whiteAlpha"
+    aria-label="YouTube"
+  />
+</HStack>
 
-              <a href="https://www.linkedin.com/in/wedesi-homes-1aa23a371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-              <IconButton
-                icon={<FaLinkedin />}
-                variant="ghost"
-                colorScheme="whiteAlpha"
-                aria-label="LinkedIn"
-              />
-              </a>
-              <IconButton
-                icon={<FaYoutube />}
-                variant="ghost"
-                colorScheme="whiteAlpha"
-                aria-label="YouTube"
-              />
-            </HStack>
           </VStack>
 
           {/* Quick Links */}
