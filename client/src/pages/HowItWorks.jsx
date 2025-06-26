@@ -13,8 +13,11 @@ import {
   ListIcon,
 } from '@chakra-ui/react';
 import { FaCheckCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // ✅ added
 
 const HowItWorksPage = () => {
+  const navigate = useNavigate(); // ✅ added
+
   const steps = [
     {
       title: 'Search & Discover 🔍',
@@ -111,7 +114,7 @@ const HowItWorksPage = () => {
               <Box
                 order={{ base: 1, lg: index % 2 === 0 ? 2 : 1 }}
                 w="full"
-                h="300px" // Ensures all images have same height
+                h="300px"
                 overflow="hidden"
                 borderRadius="2xl"
                 boxShadow="xl"
@@ -127,7 +130,11 @@ const HowItWorksPage = () => {
             </SimpleGrid>
           ))}
 
-          <Button variant="primary" size="lg">
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => navigate('/explore-cities')} // ✅ navigation added
+          >
             Start Searching Now 
           </Button>
         </VStack>
