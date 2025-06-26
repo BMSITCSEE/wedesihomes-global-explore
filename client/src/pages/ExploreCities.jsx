@@ -10,8 +10,11 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  SimpleGrid,
+  Image,
+  Button,
 } from '@chakra-ui/react';
-import CountrySection from '../components/cities/CountrySection';
+import { useNavigate } from 'react-router-dom'; // ✅ Added
 
 const countries = [
   {
@@ -57,6 +60,8 @@ const countries = [
 ];
 
 const ExploreCities = () => {
+  const navigate = useNavigate(); // ✅ navigation hook
+
   return (
     <Box py={20}>
       <Container maxW="container.xl">
@@ -82,7 +87,40 @@ const ExploreCities = () => {
             <TabPanels>
               {countries.map((country) => (
                 <TabPanel key={country.name}>
-                  <CountrySection country={country} />
+                  <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
+                    {country.cities.map((city) => (
+                      <Box
+                        key={city.name}
+                        bg="white"
+                        borderRadius="xl"
+                        overflow="hidden"
+                        boxShadow="md"
+                        p={4}
+                      >
+                        <Image
+                          src={city.image}
+                          alt={city.name}
+                          w="100%"
+                          h="150px"
+                          objectFit="cover"
+                          borderRadius="md"
+                        />
+                        <VStack align="start" mt={4}>
+                          <Text fontWeight="bold" fontSize="lg" color="brand.navyBlue">
+                            {city.name}
+                          </Text>
+                          <Text color="gray.600">{city.properties} properties</Text>
+                          <Button
+                            variant="outline"
+                            colorScheme="green"
+                            onClick={() => navigate(`/explore-cities?city=${encodeURIComponent(city.name)}`)} // ✅ Added
+                          >
+                            View Properties
+                          </Button>
+                        </VStack>
+                      </Box>
+                    ))}
+                  </SimpleGrid>
                 </TabPanel>
               ))}
             </TabPanels>
