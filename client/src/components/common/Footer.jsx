@@ -22,7 +22,7 @@ const Footer = () => {
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
           {/* Company Info */}
           <VStack align="start" spacing={4}>
-            <Image src="client/public/assets/icon (3).png" alt="WEDESIHOMES" h="40px" filter="brightness(0) invert(1)" />
+            <Image src="/assets/icon (3).png" alt="WEDESIHOMES" h="40px" filter="brightness(0) invert(1)" />
             <Text fontSize="sm" color="gray.300">
               Making student accommodation search simple, safe, and affordable worldwide.
             </Text>
