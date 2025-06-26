@@ -39,16 +39,15 @@ const Footer = () => {
                 colorScheme="whiteAlpha"
                 aria-label="Twitter"
               />
-
               <a href="https://www.instagram.com/wedesihomes/" target="_blank" rel="noopener noreferrer">
-              <IconButton
-              icon={<FaInstagram />}
-              variant="ghost"
-              colorScheme="whiteAlpha"
-              aria-label="Instagram"
-              />
-              </a>
-              
+  <IconButton
+    icon={<FaInstagram />}
+    variant="ghost"
+    colorScheme="whiteAlpha"
+    aria-label="Instagram"
+  />
+</a>
+
               <a href="https://www.linkedin.com/in/wedesi-homes-1aa23a371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
               <IconButton
                 icon={<FaLinkedin />}
