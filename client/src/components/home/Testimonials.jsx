@@ -111,7 +111,7 @@ const Testimonials = () => {
 
   const stats = [
     { label: 'Happy Students', value: '5000+', emoji: '😊' },
-    { label: 'Average Rating', value: '4.9/5', emoji: '⭐' },
+    { label: 'Rating', value: '4.9/5', emoji: '⭐' },
     { label: 'Success Rate', value: '98%', emoji: '✅' },
   ];
 
