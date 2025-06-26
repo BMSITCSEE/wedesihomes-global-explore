@@ -15,25 +15,25 @@ import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 const AboutUs = () => {
   const team = [
     {
-      name: 'Raj Sharma',
+      name: 'Kartik Srivastava',
       role: 'CEO & Founder',
       emoji: '👨‍💼',
       bio: 'Passionate about making student accommodation accessible globally',
     },
     {
-      name: 'Sarah Chen',
+      name: 'Aditya Srivastava',
       role: 'CTO',
       emoji: '👩‍💻',
       bio: 'Tech enthusiast building seamless experiences for students',
     },
     {
-      name: 'Mike Johnson',
+      name: 'Atin Srivastava',
       role: 'Head of Operations',
       emoji: '👨‍🔧',
       bio: 'Ensuring smooth operations and happy customers worldwide',
     },
     {
-      name: 'Priya Patel',
+      name: 'Parth',
       role: 'Marketing Lead',
       emoji: '👩‍🎨',
       bio: 'Creating connections between students and their dream homes',
