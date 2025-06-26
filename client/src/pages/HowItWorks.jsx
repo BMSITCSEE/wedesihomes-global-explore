@@ -25,7 +25,7 @@ const HowItWorksPage = () => {
         'Check real student reviews',
         'Compare different options',
       ],
-      image: '/assets/searchanddiscover.jpg' ,
+      image: '/assets/searchanddiscover.jpg',
     },
     {
       title: 'Connect & Explore ❤',
@@ -36,7 +36,7 @@ const HowItWorksPage = () => {
         'Ask questions about amenities',
         'Get instant responses',
       ],
-      image: '/assets/connectandexplore.jpg' ,
+      image: '/assets/connectandexplore.jpg',
     },
     {
       title: 'Book & Move In 🔑',
@@ -47,7 +47,7 @@ const HowItWorksPage = () => {
         'Move-in checklist provided',
         '24/7 support available',
       ],
-      image: '/assets/bookandmovein.jpg' ,
+      image: '/assets/bookandmovein.jpg',
     },
   ];
 
@@ -108,12 +108,19 @@ const HowItWorksPage = () => {
                 </List>
               </VStack>
 
-              <Box order={{ base: 1, lg: index % 2 === 0 ? 2 : 1 }}>
+              <Box
+                order={{ base: 1, lg: index % 2 === 0 ? 2 : 1 }}
+                w="full"
+                maxH="350px"
+              >
                 <Image
                   src={step.image}
                   alt={step.title}
                   borderRadius="2xl"
                   boxShadow="xl"
+                  w="full"
+                  h="100%"
+                  objectFit="cover"
                 />
               </Box>
             </SimpleGrid>
