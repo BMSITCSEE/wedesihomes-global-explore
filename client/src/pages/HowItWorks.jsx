@@ -128,7 +128,7 @@ const HowItWorksPage = () => {
           ))}
 
           <Button variant="primary" size="lg">
-            Start Searching Now 🚀
+            Start Searching Now 
           </Button>
         </VStack>
       </Container>
