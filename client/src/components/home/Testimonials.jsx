@@ -256,7 +256,7 @@ const Testimonials = () => {
             >
               <Heading size="lg">Ready to Find Your Perfect Home?</Heading>
               <Text fontSize="lg" opacity={0.9}>
-                Join thousands of students who trust WEDESIHOMES
+                Join thousands of students who trust WEDESI HOMES
               </Text>
               <HStack spacing={4}>
                 <Button
