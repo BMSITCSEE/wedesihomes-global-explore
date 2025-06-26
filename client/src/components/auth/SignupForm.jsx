@@ -15,9 +15,14 @@ import {
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignupForm = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,10 +31,32 @@ const SignupForm = ({ onClose }) => {
     agreeToTerms: false,
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle signup logic here
-    console.log('Signup:', formData);
+
+    if (!formData.agreeToTerms) {
+      setError('You must agree to the Terms & Conditions');
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/auth/register`,
+        {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          phone: formData.phone,
+        },
+        { withCredentials: true }
+      );
+
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      onClose?.(); // close modal/drawer if used
+      navigate('/');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Registration failed');
+    }
   };
 
   return (
@@ -86,10 +113,14 @@ const SignupForm = ({ onClose }) => {
 
       <Checkbox
         isChecked={formData.agreeToTerms}
-        onChange={(e) => setFormData({ ...formData, agreeToTerms: e.target.checked })}
+        onChange={(e) =>
+          setFormData({ ...formData, agreeToTerms: e.target.checked })
+        }
       >
         I agree to the Terms & Conditions
       </Checkbox>
+
+      {error && <Text color="red.500" fontSize="sm">{error}</Text>}
 
       <Button variant="primary" type="submit" w="full" size="lg">
         Sign Up
