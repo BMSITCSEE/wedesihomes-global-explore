@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Button,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom'; // ✅ added
 import PropertyCard from '../properties/PropertyCard';
 
 const featuredProperties = [
@@ -44,6 +45,8 @@ const featuredProperties = [
 ];
 
 const FeaturedProperties = () => {
+  const navigate = useNavigate(); // ✅ added
+
   return (
     <Box py={20}>
       <Container maxW="container.xl">
@@ -63,7 +66,11 @@ const FeaturedProperties = () => {
             ))}
           </SimpleGrid>
 
-          <Button variant="primary" size="lg">
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => navigate('/explore-cities')} // ✅ now functional
+          >
             View All Properties →
           </Button>
         </VStack>
