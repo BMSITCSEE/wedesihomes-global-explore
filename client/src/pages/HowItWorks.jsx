@@ -111,14 +111,15 @@ const HowItWorksPage = () => {
               <Box
                 order={{ base: 1, lg: index % 2 === 0 ? 2 : 1 }}
                 w="full"
-                maxH="350px"
+                h="300px" // Ensures all images have same height
+                overflow="hidden"
+                borderRadius="2xl"
+                boxShadow="xl"
               >
                 <Image
                   src={step.image}
                   alt={step.title}
-                  borderRadius="2xl"
-                  boxShadow="xl"
-                  w="full"
+                  w="100%"
                   h="100%"
                   objectFit="cover"
                 />
