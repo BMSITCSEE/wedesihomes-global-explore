@@ -265,7 +265,7 @@ const Testimonials = () => {
                   color="white"
                   _hover={{ bg: '#6BA414' }}
                 >
-                  Start Searching 🚀
+                  Start Searching 
                 </Button>
                 <Button
                   size="lg"
