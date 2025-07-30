@@ -32,11 +32,7 @@ const LoginForm = ({ onClose }) => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/auth/login`,
-        formData,
-        { withCredentials: true }
-      );
+      const response = await authService.login(formData);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       toast({
         title: 'Login successful',
