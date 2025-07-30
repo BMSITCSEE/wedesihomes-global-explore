@@ -17,9 +17,16 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
+
+// UPDATED CORS - Allow your Vercel domain
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [
+    'https://wedesihomes-global-explore-51u4-cfl116frr.vercel.app',
+    'http://localhost:3000' // for local testing
+  ],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Rate limiting
