@@ -1,3 +1,6 @@
+const dotenv = require('dotenv'); // ADD THIS LINE
+dotenv.config(); // ADD THIS LINE
+
 const app = require('./app');
 const connectDB = require('./config/database');
 
@@ -10,12 +13,11 @@ connectDB();
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🔗 MongoDB: ${process.env.MONGODB_URI ? 'Connected' : 'Not configured'}`);
 });
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {
   console.error('Unhandled Promise Rejection:', err);
-  // Close server & exit process
   process.exit(1);
 });
-
