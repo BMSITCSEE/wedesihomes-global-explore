@@ -40,15 +40,12 @@ const SignupForm = ({ onClose }) => {
     }
 
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/auth/register`,
-        {
+      const response = await authService.register({
           name: formData.name,
           email: formData.email,
           password: formData.password,
           phone: formData.phone,
-        },
-        { withCredentials: true }
+        }
       );
 
       localStorage.setItem('user', JSON.stringify(res.data.user));
