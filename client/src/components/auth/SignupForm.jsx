@@ -7,20 +7,21 @@ import {
   Button,
   Text,
   Divider,
-  HStack,
   InputGroup,
   InputRightElement,
   IconButton,
   Checkbox,
+  useToast,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { FaGoogle, FaFacebook } from 'react-icons/fa';
-import axios from 'axios';
+import { authService } from '../../services/auth.service'; // ADD THIS IMPORT
 import { useNavigate } from 'react-router-dom';
 
 const SignupForm = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const toast = useToast();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -39,20 +40,47 @@ const SignupForm = ({ onClose }) => {
       return;
     }
 
-    try {
-      const response = await authService.register({
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-          phone: formData.phone,
-        }
-      );
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long');
+      return;
+    }
 
-      localStorage.setItem('user', JSON.stringify(res.data.user));
-      onClose?.(); // close modal/drawer if used
-      navigate('/');
+    setLoading(true);
+    setError('');
+
+    console.log('Registration attempt with:', { 
+      name: formData.name, 
+      email: formData.email 
+    });
+
+    try {
+      // CORRECTED: Use authService and proper variable name
+      const response = await authService.register({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        phone: formData.phone,
+      });
+
+      console.log('Registration response:', response);
+
+      if (response.success) {
+        localStorage.setItem('user', JSON.stringify(response.user));
+        toast({
+          title: 'Registration successful',
+          description: 'Welcome to WEDESIHOMES!',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+        onClose?.();
+        navigate('/');
+      }
     } catch (err) {
+      console.error('Registration error:', err);
       setError(err.response?.data?.message || 'Registration failed');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -92,7 +120,7 @@ const SignupForm = ({ onClose }) => {
         <InputGroup>
           <Input
             type={showPassword ? 'text' : 'password'}
-            placeholder="Create a strong password"
+            placeholder="Create a strong password (min 6 characters)"
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           />
@@ -119,34 +147,13 @@ const SignupForm = ({ onClose }) => {
 
       {error && <Text color="red.500" fontSize="sm">{error}</Text>}
 
-      <Button variant="primary" type="submit" w="full" size="lg">
+      <Button variant="primary" type="submit" w="full" size="lg" isLoading={loading}>
         Sign Up
       </Button>
 
       <Divider />
 
-      <Text fontSize="sm" color="gray.600">
-        Or sign up with
-      </Text>
-
-      <HStack spacing={4} w="full">
-        <Button
-          leftIcon={<FaGoogle />}
-          variant="outline"
-          flex={1}
-          colorScheme="red"
-        >
-          Google
-        </Button>
-        <Button
-          leftIcon={<FaFacebook />}
-          variant="outline"
-          flex={1}
-          colorScheme="facebook"
-        >
-          Facebook
-        </Button>
-      </HStack>
+      <Text fontSize="sm" color="gray.600">Social login coming soon...</Text>
     </VStack>
   );
 };
