@@ -15,7 +15,8 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { authService } from '../../services/auth.service'; // ADD THIS IMPORT
+import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onClose }) => {
@@ -30,27 +31,22 @@ const LoginForm = ({ onClose }) => {
     e.preventDefault();
     setLoading(true);
     setError('');
-    
-    console.log('Login attempt with:', { email: formData.email });
-    
     try {
-      // CORRECTED: Use authService and proper variable name
-      const response = await authService.login(formData);
-      console.log('Login response:', response);
-      
-      if (response.success) {
-        localStorage.setItem('user', JSON.stringify(response.user));
-        toast({
-          title: 'Login successful',
-          status: 'success',
-          duration: 3000,
-          isClosable: true,
-        });
-        onClose?.();
-        navigate('/');
-      }
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/auth/login`,
+        formData,
+        { withCredentials: true }
+      );
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      toast({
+        title: 'Login successful',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+      onClose?.();
+      navigate('/');
     } catch (err) {
-      console.error('Login error:', err);
       setError(err.response?.data?.message || 'Login failed');
     } finally {
       setLoading(false);
@@ -102,7 +98,12 @@ const LoginForm = ({ onClose }) => {
 
       <Divider />
 
-      <Text fontSize="sm" color="gray.600">Social login coming soon...</Text>
+      <Text fontSize="sm" color="gray.600">Or continue with</Text>
+
+      <HStack spacing={4} w="full">
+        <Button leftIcon={<FaGoogle />} variant="outline" flex={1} colorScheme="red">Google</Button>
+        <Button leftIcon={<FaFacebook />} variant="outline" flex={1} colorScheme="facebook">Facebook</Button>
+      </HStack>
     </VStack>
   );
 };
