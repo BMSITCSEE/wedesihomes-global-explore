@@ -17,24 +17,19 @@ api.interceptors.request.use(
     console.log('Making API request to:', config.baseURL + config.url);
     const token = localStorage.getItem('token');
     if (token) {
-      config.headers.Authorization = 'Bearer ' + token;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
   (error) => {
-    console.error('Request interceptor error:', error);
     return Promise.reject(error);
   }
 );
 
 // Response interceptor for error handling
 api.interceptors.response.use(
-  (response) => {
-    console.log('API response received:', response.status, response.data);
-    return response;
-  },
+  (response) => response,
   (error) => {
-    console.error('API response error:', error.response?.status, error.response?.data);
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
