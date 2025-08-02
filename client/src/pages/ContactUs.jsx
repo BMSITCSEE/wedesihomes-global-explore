@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -13,10 +13,21 @@ import {
   FormLabel,
   Icon,
   HStack,
+  useToast,
 } from '@chakra-ui/react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import axios from 'axios';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const toast = useToast();
+
   const contactInfo = [
     {
       icon: FaPhone,
@@ -44,6 +55,74 @@ const ContactUs = () => {
     },
   ];
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: 'Missing Information',
+        description: 'Please fill in all required fields (Name, Email, Message)',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL || 'https://wedesihomes-backend.onrender.com/api'}/messages`,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: `New Contact Form Message from ${formData.name}`,
+          message: formData.message,
+        }
+      );
+
+      if (response.data.success) {
+        toast({
+          title: 'Message Sent! 🎉',
+          description: 'Thank you for contacting us! We will get back to you soon.',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      }
+    } catch (error) {
+      console.error('Message send error:', error);
+      toast({
+        title: 'Message Failed',
+        description: error.response?.data?.message || 'Failed to send message. Please try again.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Box py={20}>
       <Container maxW="container.xl">
@@ -60,31 +139,61 @@ const ContactUs = () => {
           <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} w="full">
             {/* Contact Form */}
             <Box bg="gray.50" p={8} borderRadius="2xl">
-              <VStack spacing={6}>
+              <VStack spacing={6} as="form" onSubmit={handleSubmit}>
                 <Heading size="lg" color="brand.navyBlue">
                   Send us a Message
                 </Heading>
-                <FormControl>
+                <FormControl isRequired>
                   <FormLabel>Your Name</FormLabel>
-                  <Input placeholder="John Doe" bg="white" />
+                  <Input 
+                    name="name"
+                    placeholder="John Doe" 
+                    bg="white"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                  />
                 </FormControl>
-                <FormControl>
+                <FormControl isRequired>
                   <FormLabel>Email Address</FormLabel>
-                  <Input placeholder="john@example.com" type="email" bg="white" />
+                  <Input 
+                    name="email"
+                    placeholder="john@example.com" 
+                    type="email" 
+                    bg="white"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
                 </FormControl>
                 <FormControl>
                   <FormLabel>Phone Number</FormLabel>
-                  <Input placeholder="+1 234 567 8900" type="tel" bg="white" />
+                  <Input 
+                    name="phone"
+                    placeholder="+1 234 567 8900" 
+                    type="tel" 
+                    bg="white"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
                 </FormControl>
-                <FormControl>
+                <FormControl isRequired>
                   <FormLabel>Message</FormLabel>
                   <Textarea
+                    name="message"
                     placeholder="How can we help you?"
                     rows={5}
                     bg="white"
+                    value={formData.message}
+                    onChange={handleInputChange}
                   />
                 </FormControl>
-                <Button variant="primary" size="lg" w="full">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  w="full"
+                  type="submit"
+                  isLoading={loading}
+                  loadingText="Sending..."
+                >
                   Send Message
                 </Button>
               </VStack>
