@@ -261,9 +261,54 @@ exports.getSavedProperties = asyncHandler(async (req, res) => {
       select: 'name country',
     },
   });
-
   res.json({
     success: true,
     properties: user.savedProperties,
+  });
+});
+
+// @desc    Get properties by city name
+// @route   GET /api/properties/search
+// @access  Public
+exports.getPropertiesByCityName = asyncHandler(async (req, res) => {
+  const { city, page = 1, limit = 12 } = req.query;
+
+  let query = { availability: true };
+
+  if (city) {
+    // First find the city by name
+    const cityDoc = await City.findOne({ 
+      name: { $regex: city, $options: 'i' } 
+    });
+    
+    if (cityDoc) {
+      query['location.city'] = cityDoc._id;
+    } else {
+      // If city not found, return empty results
+      return res.json({
+        success: true,
+        count: 0,
+        totalPages: 0,
+        currentPage: page,
+        properties: [],
+      });
+    }
+  }
+
+  const properties = await Property.find(query)
+    .populate('location.city', 'name country')
+    .populate('owner', 'name email phone')
+    .sort('-createdAt')
+    .limit(limit * 1)
+    .skip((page - 1) * limit);
+
+  const count = await Property.countDocuments(query);
+
+  res.json({
+    success: true,
+    count,
+    totalPages: Math.ceil(count / limit),
+    currentPage: page,
+    properties,
   });
 });
