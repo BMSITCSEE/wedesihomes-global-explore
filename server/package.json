@@ -7,7 +7,8 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "test": "jest",
-    "seed": "node src/utils/seeder.js"
+    "seed": "node src/utils/seeder.js",
+    "seed:destroy": "node src/utils/seeder.js -d"
   },
   "dependencies": {
     "express": "^4.18.2",
