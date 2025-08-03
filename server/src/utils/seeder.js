@@ -72,7 +72,7 @@ const getSampleProperties = (cities, userId) => [
     },
     location: {
       address: 'Yugo Berkeley Street, 145 Berkeley Street, Melbourne, 3000',
-      city: cities.find(c => c.name === 'Australia')._id,
+      city: cities.find(c => c.name === 'Melbourne')._id,
       coordinates: {
         lat: 51.4988,
         lng: -0.1749
@@ -121,7 +121,7 @@ const getSampleProperties = (cities, userId) => [
     },
     location: {
       address: 'University Square, 85 Barry Street, Carlton, 3053',
-      city: cities.find(c => c.name === 'Australia')._id,
+      city: cities.find(c => c.name === 'Melbourne')._id,
       coordinates: {
         lat: 51.4988,
         lng: -0.1749
@@ -170,7 +170,7 @@ const getSampleProperties = (cities, userId) => [
     },
     location: {
       address: 'Adelaide City, 269 North Terrace, Adelaide, SA 5000',
-      city: cities.find(c => c.name === 'Australia')._id,
+      city: cities.find(c => c.name === 'Adelaide')._id,
       coordinates: {
         lat: '',
         lng: ''
@@ -219,7 +219,7 @@ const getSampleProperties = (cities, userId) => [
     },
     location: {
       address: 'Yugo Perth City, 89 Stirling Street, Perth, 6000',
-      city: cities.find(c => c.name === 'Australia')._id,
+      city: cities.find(c => c.name === 'Perth')._id,
       coordinates: {
         lat: '',
         lng: ''
