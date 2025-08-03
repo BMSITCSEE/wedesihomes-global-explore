@@ -53,7 +53,7 @@ const countries = [
     cities: [
       { name: 'Sydney', properties: 200, image: '/assets/sydney.jpg' },
       { name: 'Melbourne', properties: 180, image: '/assets/melbourne.jpg' },
-      { name: 'Brisbane', properties: 100, image: '/assets/brisbane.jpg' },
+      { name: 'Adelaide', properties: 100, image: '/assets/brisbane.jpg' },
       { name: 'Perth', properties: 70, image: '/assets/perth.jpg' },
     ],
   },
