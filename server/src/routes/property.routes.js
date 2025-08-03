@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { protect, authorize } = require('../middleware/auth.middleware');
 const {
   getProperties,
   getProperty,
@@ -12,12 +11,14 @@ const {
   getPropertysByCity,
   toggleSaveProperty,
   getSavedProperties,
+  getPropertiesByCityName, // ADD THIS
 } = require('../controllers/property.controller');
+const { protect, authorize } = require('../middleware/auth.middleware');
 
 // Public routes
 router.get('/', getProperties);
 router.get('/featured', getFeaturedProperties);
-router.get('/search', searchProperties);
+router.get('/search', getPropertiesByCityName); // ADD THIS LINE
 router.get('/city/:cityId', getPropertysByCity);
 router.get('/:id', getProperty);
 
