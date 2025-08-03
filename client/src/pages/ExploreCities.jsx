@@ -113,7 +113,7 @@ const ExploreCities = () => {
                           <Button
                             variant="outline"
                             colorScheme="green"
-                            onClick={() => navigate(`/explore-cities?city=${encodeURIComponent(city.name)}`)} // ✅ Added
+                            onClick={() => navigate(`/properties/${encodeURIComponent(city.name)}`)} // ✅ Added
                           >
                             View Properties
                           </Button>
