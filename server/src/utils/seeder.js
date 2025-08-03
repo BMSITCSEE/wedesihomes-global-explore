@@ -276,7 +276,7 @@ const getSampleProperties = (cities, userId) => [
       count: 22
     },
     availability: 'Limited'
-  }
+  },
 
 
   {
