@@ -59,6 +59,205 @@ const sampleUser = {
 
 // Sample Properties
 const getSampleProperties = (cities, userId) => [
+    // AUSTRALIA PROPERTIES - ADD THESE
+  
+  {
+    name: 'Berkley Street',
+    description: 'Want a room that’s just what you’re looking for? At this Elizabeth Street address, you’ll find one-person studios and six-bedroom townhouses (with everything in between). And they all include Smart TVs, super-fast wifi and air con. And that\'s not all. When deadlines loom, hit the communal study room or grab a study pod. Alternatively, avoid work altogether on our sunny terrace with skyscraper views, inside the gym or in our cinema room, bingeing on movie collections! Living with 330+ other Yugoers, there’ll always be someone who wants to join you.',
+    propertyType: 'PBSA',
+    price: {
+      amount: 400,
+      currency: 'AUD$',
+      period: 'Week'
+    },
+    location: {
+      address: 'Yugo Berkeley Street, 145 Berkeley Street, Melbourne, 3000',
+      city: cities.find(c => c.name === 'Australia')._id,
+      coordinates: {
+        lat: 51.4988,
+        lng: -0.1749
+      },
+      nearbyUniversities: [
+        { name: 'University of Melbourne', distance: 0.1 },
+        { name: 'RMIT University', distance: 0.9 },
+        { name: 'Trinity College', distance: 0.8 }
+      ]
+    },
+    images: [
+      { url: '' },
+      { url: '' },
+      { url: '' }
+    ],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
+    roomDetails: {
+      totalRooms: 20,
+      availableRooms: 7,
+      bathroomType: 'Both En-suite & Shared'
+    },
+    rules: {
+      smoking: false,
+      pets: false,
+      visitors: true,
+      minStay: 6
+    },
+    owner: userId,
+    verified: true,
+    featured: true,
+    rating: {
+      average: 4.8,
+      count: 22
+    },
+    availability: 'Limited'
+  },
+  
+  {
+    name: 'University Square',
+    description: 'Want a top-notch studio with your own private terrace? Or how about a sociable six-bed apartment? With 20 different room styles, chances are we’ve got what you’re looking for. And even if you prefer to fly solo, with 340+ other students living here, finding a workout buddy for the gym or a bbq buddy for a cook up on the terrace won’t be a problem. Even better, at this Carlton address, not far from Little Italy, you’re just over the road from Melbourne Uni. You’ll never be late for lectures again!',
+    propertyType: 'PBSA',
+    price: {
+      amount: 400,
+      currency: 'AUD$',
+      period: 'Week'
+    },
+    location: {
+      address: 'University Square, 85 Barry Street, Carlton, 3053',
+      city: cities.find(c => c.name === 'Australia')._id,
+      coordinates: {
+        lat: 51.4988,
+        lng: -0.1749
+      },
+      nearbyUniversities: [
+        { name: 'University of Melbourne', distance: 0.1 },
+        { name: 'RMIT University', distance: 0.9 },
+        { name: 'Trinity College', distance: 0.9 }
+      ]
+    },
+    images: [
+      { url: '' },
+      { url: '' },
+      { url: '' }
+    ],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
+    roomDetails: {
+      totalRooms: 20,
+      availableRooms: 7,
+      bathroomType: 'Both En-suite & Shared'
+    },
+    rules: {
+      smoking: false,
+      pets: false,
+      visitors: true,
+      minStay: 6
+    },
+    owner: userId,
+    verified: true,
+    featured: true,
+    rating: {
+      average: 4.8,
+      count: 22
+    },
+    availability: 'Limited'
+  },
+  
+  {
+    name: 'Yugo AdelaideCity',
+    description: 'Squeezing the juice out of co-living, that’s Adelaide City. Of course, there are private spaces – our studio apartments are great for that! But with over 700 students, the social potential is off the scale. And for starters, you don’t have to live alone. We’ve got shared apartments too. Plus communal spaces that make you feel a part of everything, whether you’re studying, working out or chilling in our cinema room. So whatever type of student accommodation you\'re looking for in Adelaide, you\'re likely to find it at Adelaide City. Got a lecture to go to? We’re near all the universities — including the University of Adelaide and the University of South Australia — so there’s never far to go.',
+    propertyType: 'PBSA',
+    price: {
+      amount: 400,
+      currency: 'AUD$',
+      period: 'Week'
+    },
+    location: {
+      address: 'Adelaide City, 269 North Terrace, Adelaide, SA 5000',
+      city: cities.find(c => c.name === 'Australia')._id,
+      coordinates: {
+        lat: '',
+        lng: ''
+      },
+      nearbyUniversities: [
+        { name: 'The University of Adelaide', distance: 0.1 },
+        { name: 'University of South Australia', distance: 0.9 },
+        { name: 'Torrens University Australia', distance: 0.9 }
+      ]
+    },
+    images: [
+      { url: '' },
+      { url: '' },
+      { url: '' }
+    ],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
+    roomDetails: {
+      totalRooms: 20,
+      availableRooms: 7,
+      bathroomType: 'Both En-suite & Shared'
+    },
+    rules: {
+      smoking: false,
+      pets: false,
+      visitors: true,
+      minStay: 6
+    },
+    owner: userId,
+    verified: true,
+    featured: true,
+    rating: {
+      average: 4.8,
+      count: 22
+    },
+    availability: 'Limited'
+  },
+  
+  {
+    name: 'Perth City',
+    description: 'Experience best-in-class student living at Yugo Perth City! Our prime location provides convenient access to bus stops and Perth Railway Station, seamlessly connecting you to major universities. Choose from our diverse selection of fully furnished apartments, ranging from studios to spacious shared options. Here, you\'ll immerse yourself in a thriving community with an array of exceptional amenities, including a pool, gym, cinema, games room, study pods and rooftop terrace. As student accommodation in Perth goes, there\'s rarely so much to do under one roof! Also, Yugo Perth City was honoured with the Residential Architecture Award in 2019 for Purpose-Built Student Accommodation in Western Australia. Your ideal student living experience awaits!',
+    propertyType: 'PBSA',
+    price: {
+      amount: 400,
+      currency: 'AUD$',
+      period: 'Week'
+    },
+    location: {
+      address: 'Yugo Perth City, 89 Stirling Street, Perth, 6000',
+      city: cities.find(c => c.name === 'Australia')._id,
+      coordinates: {
+        lat: '',
+        lng: ''
+      },
+      nearbyUniversities: [
+        { name: 'Curtin University', distance: 0.1 },
+        { name: 'The University of Western Australia', distance: 0.9 },
+        { name: 'UHI Perth', distance: 0.9 }
+      ]
+    },
+    images: [
+      { url: '' },
+      { url: '' },
+      { url: '' }
+    ],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
+    roomDetails: {
+      totalRooms: 20,
+      availableRooms: 7,
+      bathroomType: 'Both En-suite & Shared'
+    },
+    rules: {
+      smoking: false,
+      pets: false,
+      visitors: true,
+      minStay: 6
+    },
+    owner: userId,
+    verified: true,
+    featured: true,
+    rating: {
+      average: 4.8,
+      count: 22
+    },
+    availability: 'Limited'
+  }
+
+
   {
     name: 'Trinity Student Residence',
     description: 'Modern student accommodation just 5 minutes walk from Trinity College Dublin. Features fully furnished rooms with high-speed WiFi, communal kitchens, and 24/7 security.',
