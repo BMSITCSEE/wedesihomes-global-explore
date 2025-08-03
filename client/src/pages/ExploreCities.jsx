@@ -51,10 +51,10 @@ const countries = [
     name: 'Australia',
     flag: '🇦🇺',
     cities: [
-      { name: 'Sydney', properties: 200, image: '/assets/sydney.jpg' },
-      { name: 'Melbourne', properties: 180, image: '/assets/melbourne.jpg' },
-      { name: 'Adelaide', properties: 100, image: '/assets/brisbane.jpg' },
-      { name: 'Perth', properties: 70, image: '/assets/perth.jpg' },
+      { name: 'Sydney', properties: 0, image: '/assets/sydney.jpg' },
+      { name: 'Melbourne', properties: 2, image: '/assets/melbourne.jpg' },
+      { name: 'Adelaide', properties: 1, image: '/assets/brisbane.jpg' },
+      { name: 'Perth', properties: 1, image: '/assets/perth.jpg' },
     ],
   },
 ];
