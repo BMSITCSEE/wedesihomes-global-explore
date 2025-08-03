@@ -19,6 +19,27 @@ const connectDB = async () => {
 // Sample Cities Data
 const cities = [
   {
+    name: 'Melbourne',
+    country: 'Australia',
+    description: 'Major student city, home to University of Melbourne and RMIT',
+    image: '/assets/melbourne.jpg',
+    propertyCount: 0
+  },
+  {
+    name: 'Adelaide',
+    country: 'Australia',
+    description: 'Peaceful city with top-ranked universities',
+    image: '/assets/adelaide.jpg',
+    propertyCount: 0
+  },
+  {
+    name: 'Perth',
+    country: 'Australia',
+    description: 'Western Australia’s capital, known for education and lifestyle',
+    image: '/assets/perth.jpg',
+    propertyCount: 0
+  },
+  {
     name: 'Dublin',
     country: 'Ireland',
     description: 'Capital of Ireland, home to Trinity College and UCD',
