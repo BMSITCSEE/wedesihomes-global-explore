@@ -15,7 +15,11 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import NotFound from './pages/NotFound';
 
-// ✅ Updated imports
+// NEW IMPORTS - ADD THESE
+import PropertiesListPage from './pages/PropertiesListPage';
+import PropertyDetailPage from './pages/PropertyDetailPage';
+import RoomDetailPage from './pages/RoomDetailPage';
+
 import LoginForm from './components/auth/LoginForm';
 import SignupForm from './components/auth/SignupForm';
 
@@ -35,11 +39,14 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
 
-            {/* ✅ Updated Auth routes */}
+            {/* NEW ROUTES - ADD THESE */}
+            <Route path="/properties/:cityName" element={<PropertiesListPage />} />
+            <Route path="/property/:propertyId" element={<PropertyDetailPage />} />
+            <Route path="/property/:propertyId/room/:roomType" element={<RoomDetailPage />} />
+
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
 
-            {/* ❌ Fallback route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
