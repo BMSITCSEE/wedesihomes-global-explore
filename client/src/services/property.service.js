@@ -1,46 +1,32 @@
+
 import api from './api';
 
 export const propertyService = {
-  getProperties: async (params = {}) => {
-    const { data } = await api.get('/properties', { params });
+  // Get properties by city name
+  getPropertiesByCity: async (cityName, page = 1, limit = 12) => {
+    const { data } = await api.get(`/properties/search?city=${cityName}&page=${page}&limit=${limit}`);
     return data;
   },
 
-  getProperty: async (id) => {
-    const { data } = await api.get(/properties/${id});
+  // Get single property details
+  getProperty: async (propertyId) => {
+    const { data } = await api.get(`/properties/${propertyId}`);
     return data;
   },
 
-  createProperty: async (propertyData) => {
-    const { data } = await api.post('/properties', propertyData);
+  // Get all properties
+  getAllProperties: async (page = 1, limit = 12) => {
+    const { data } = await api.get(`/properties?page=${page}&limit=${limit}`);
     return data;
   },
 
-  updateProperty: async (id, propertyData) => {
-    const { data } = await api.put(/properties/${id}, propertyData);
+  // Save/Unsave property
+  toggleSaveProperty: async (propertyId) => {
+    const { data } = await api.post(`/properties/${propertyId}/save`);
     return data;
   },
 
-  deleteProperty: async (id) => {
-    const { data } = await api.delete(/properties/${id});
-    return data;
-  },
-
-  searchProperties: async (searchParams) => {
-    const { data } = await api.get('/properties/search', { params: searchParams });
-    return data;
-  },
-
-  getFeaturedProperties: async () => {
-    const { data } = await api.get('/properties/featured');
-    return data;
-  },
-
-  saveProperty: async (id) => {
-    const { data } = await api.post(/properties/${id}/save);
-    return data;
-  },
-
+  // Get saved properties
   getSavedProperties: async () => {
     const { data } = await api.get('/properties/user/saved');
     return data;
