@@ -11,6 +11,7 @@ const authRoutes = require('./routes/auth.routes');
 const propertyRoutes = require('./routes/property.routes');
 const cityRoutes = require('./routes/city.routes');
 const messageRoutes = require('./routes/message.routes');
+const uploadRoutes = require('./routes/upload.routes');
 
 // Import middleware
 const errorMiddleware = require('./middleware/error.middleware');
@@ -46,6 +47,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
 app.use('/api/cities', cityRoutes);
 app.use('/api/messages', messageRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
