@@ -8,52 +8,30 @@ const citySchema = new mongoose.Schema(
       trim: true,
     },
     country: {
-      name: {
-        type: String,
-        required: true,
-      },
-      code: {
-        type: String,
-        required: true,
-        uppercase: true,
-        maxlength: 2,
-      },
-      flag: String,
+      type: String,
+      required: [true, 'Please provide country name'],
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: true,
     },
     image: {
       type: String,
       required: true,
     },
-    description: String,
-    universities: [{
-      name: String,
-      ranking: Number,
-      studentCount: Number,
-    }],
     propertyCount: {
       type: Number,
       default: 0,
     },
-    popularAreas: [{
-      name: String,
-      description: String,
-    }],
-    transport: {
-      metro: Boolean,
-      bus: Boolean,
-      bike: Boolean,
-    },
-    active: {
-      type: Boolean,
-      default: true,
+    coordinates: {
+      lat: Number,
+      lng: Number,
     },
   },
   {
     timestamps: true,
   }
 );
-
-// Index for searching
-citySchema.index({ name: 1, 'country.name': 1 });
 
 module.exports = mongoose.model('City', citySchema);
