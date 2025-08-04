@@ -78,53 +78,6 @@ const PropertyDetailPage = () => {
     return icons[amenity] || FaStar;
   };
 
-  const roomTypes = [
-    {
-      type: 'Single Room',
-      price: property?.price?.amount,
-      description: 'Private single room with shared facilities',
-      features: ['Private bedroom', 'Shared bathroom', 'Shared kitchen'],
-      images: [
-        '/assets/single-room-1.jpg',
-        '/assets/single-room-2.jpg',
-        '/assets/single-room-3.jpg',
-      ]
-    },
-    {
-      type: 'Shared Room',
-      price: property?.price?.amount ? property.price.amount * 0.7 : 0,
-      description: 'Shared room with roommate, great for making friends',
-      features: ['Shared bedroom', 'Shared bathroom', 'Shared kitchen'],
-      images: [
-        '/assets/shared-room-1.jpg',
-        '/assets/shared-room-2.jpg',
-        '/assets/shared-room-3.jpg',
-      ]
-    },
-    {
-      type: 'Studio',
-      price: property?.price?.amount ? property.price.amount * 1.5 : 0,
-      description: 'Private studio with own kitchen and bathroom',
-      features: ['Private bedroom', 'Private bathroom', 'Private kitchen'],
-      images: [
-        '/assets/studio-1.jpg',
-        '/assets/studio-2.jpg',
-        '/assets/studio-3.jpg',
-      ]
-    },
-    {
-      type: 'Ensuite Room',
-      price: property?.price?.amount ? property.price.amount * 1.2 : 0,
-      description: 'Private room with ensuite bathroom',
-      features: ['Private bedroom', 'Private bathroom', 'Shared kitchen'],
-      images: [
-        '/assets/ensuite-1.jpg',
-        '/assets/ensuite-2.jpg',
-        '/assets/ensuite-3.jpg',
-      ]
-    }
-  ];
-
   if (loading) {
     return (
       <Center minH="60vh">
@@ -236,62 +189,66 @@ const PropertyDetailPage = () => {
                 </VStack>
               </TabPanel>
 
-              {/* Room Types Tab */}
+              {/* Room Types Tab - NOW USING DATABASE DATA */}
               <TabPanel>
                 <VStack spacing={6} align="stretch">
                   <Heading size="md" color="brand.navyBlue">
                     Available Room Types
                   </Heading>
                   
-                  <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-                    {roomTypes.map((room, index) => (
-                      <Box
-                        key={index}
-                        border="1px"
-                        borderColor="gray.200"
-                        borderRadius="xl"
-                        p={6}
-                        bg="white"
-                        boxShadow="sm"
-                        transition="all 0.2s"
-                        _hover={{ boxShadow: 'md', transform: 'translateY(-2px)' }}
-                      >
-                        <VStack spacing={4} align="stretch">
-                          <HStack justify="space-between">
-                            <Heading size="sm" color="brand.navyBlue">
-                              {room.type}
-                            </Heading>
-                            <Text fontWeight="bold" color="brand.parrotGreen">
-                              ${room.price}/{property.price?.period}
-                            </Text>
-                          </HStack>
-                          
-                          <Text color="gray.600" fontSize="sm">
-                            {room.description}
-                          </Text>
-                          
-                          <VStack spacing={1} align="start">
-                            {room.features.map((feature, idx) => (
-                              <Text key={idx} fontSize="sm" color="gray.700">
-                                • {feature}
+                  {property.roomTypes && property.roomTypes.length > 0 ? (
+                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                      {property.roomTypes.map((room, index) => (
+                        <Box
+                          key={index}
+                          border="1px"
+                          borderColor="gray.200"
+                          borderRadius="xl"
+                          p={6}
+                          bg="white"
+                          boxShadow="sm"
+                          transition="all 0.2s"
+                          _hover={{ boxShadow: 'md', transform: 'translateY(-2px)' }}
+                        >
+                          <VStack spacing={4} align="stretch">
+                            <HStack justify="space-between">
+                              <Heading size="sm" color="brand.navyBlue">
+                                {room.name}
+                              </Heading>
+                              <Text fontWeight="bold" color="brand.parrotGreen">
+                                ${room.price?.amount}/{room.price?.period}
                               </Text>
-                            ))}
+                            </HStack>
+                            
+                            <Text color="gray.600" fontSize="sm">
+                              {room.description}
+                            </Text>
+                            
+                            <VStack spacing={1} align="start">
+                              {room.features?.map((feature, idx) => (
+                                <Text key={idx} fontSize="sm" color="gray.700">
+                                  • {feature}
+                                </Text>
+                              ))}
+                            </VStack>
+                            
+                            <Divider />
+                            
+                            <Button
+                              variant="outline"
+                              colorScheme="green"
+                              size="sm"
+                              onClick={() => navigate(`/property/${propertyId}/room/${room.type}`)}
+                            >
+                              View Room Photos
+                            </Button>
                           </VStack>
-                          
-                          <Divider />
-                          
-                          <Button
-                            variant="outline"
-                            colorScheme="green"
-                            size="sm"
-                            onClick={() => navigate(`/property/${propertyId}/room/${room.type.toLowerCase().replace(' ', '-')}`)}
-                          >
-                            View Room Photos
-                          </Button>
-                        </VStack>
-                      </Box>
-                    ))}
-                  </SimpleGrid>
+                        </Box>
+                      ))}
+                    </SimpleGrid>
+                  ) : (
+                    <Text color="gray.500">No room types available for this property.</Text>
+                  )}
                 </VStack>
               </TabPanel>
 
