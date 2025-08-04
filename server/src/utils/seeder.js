@@ -113,7 +113,7 @@ const getSampleProperties = (cities, userId) => [
     roomDetails: {
       totalRooms: 700,
       availableRooms: 50,
-      bathroomType: 'mixed'
+      bathroomType: 'shared'
     },
     roomTypes: [
       {
@@ -179,7 +179,7 @@ const getSampleProperties = (cities, userId) => [
           { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite' }
         ],
         bedCount: 5,
-        bathroomType: 'ensuite',
+        bathroomType: 'private',
         bedType: 'single'
       },
       {
@@ -205,7 +205,7 @@ const getSampleProperties = (cities, userId) => [
           { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Single ensuite room' }
         ],
         bedCount: 1,
-        bathroomType: 'ensuite',
+        bathroomType: 'private',
         bedType: 'single'
       },
       {
@@ -290,7 +290,7 @@ const getSampleProperties = (cities, userId) => [
     roomDetails: {
       totalRooms: 400,
       availableRooms: 35,
-      bathroomType: 'mixed'
+      bathroomType: 'shared'
     },
     roomTypes: [
       {
@@ -303,7 +303,7 @@ const getSampleProperties = (cities, userId) => [
           { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite' }
         ],
         bedCount: 5,
-        bathroomType: 'ensuite'
+        bathroomType: 'private'
       },
       {
         type: '5-bed-ensuite-apartment-high-floor',
@@ -315,7 +315,7 @@ const getSampleProperties = (cities, userId) => [
           { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite high floor' }
         ],
         bedCount: 5,
-        bathroomType: 'ensuite',
+        bathroomType: 'private',
         floor: 'high',
         hasView: true,
         viewType: 'city'
@@ -467,7 +467,7 @@ const getSampleProperties = (cities, userId) => [
     roomDetails: {
       totalRooms: 330,
       availableRooms: 25,
-      bathroomType: 'mixed'
+      bathroomType: 'shared'
     },
     roomTypes: [
       {
@@ -522,7 +522,7 @@ const getSampleProperties = (cities, userId) => [
         description: 'Three-bedroom apartment with ensuite bathrooms',
         features: ['3 bedrooms', 'Ensuite bathrooms', 'Shared kitchen', 'Privacy'],
         images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed ensuite' }],
-        bedCount: 3, bathroomType: 'ensuite'
+        bedCount: 3, bathroomType: 'private'
       },
       {
         type: '3-bed-ensuite-apartment-with-terrace',
@@ -531,7 +531,7 @@ const getSampleProperties = (cities, userId) => [
         description: 'Premium three-bedroom ensuite apartment with terrace',
         features: ['3 bedrooms', 'Ensuite bathrooms', 'Private terrace', 'Premium amenities'],
         images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed ensuite terrace' }],
-        bedCount: 3, bathroomType: 'ensuite', hasTerrace: true
+        bedCount: 3, bathroomType: 'private', hasTerrace: true
       },
       {
         type: '6-bed-townhouse',
@@ -682,7 +682,7 @@ const getSampleProperties = (cities, userId) => [
     roomDetails: {
       totalRooms: 340,
       availableRooms: 30,
-      bathroomType: 'mixed'
+      bathroomType: 'shared'
     },
     roomTypes: [
       {
