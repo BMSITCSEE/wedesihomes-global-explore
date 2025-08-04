@@ -105,9 +105,9 @@ const getSampleProperties = (cities, userId) => [
       ]
     },
     images: [
-      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'Adelaide City Building' },
-      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Common Area' },
-      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Study Space' }
+      { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754241848/adec1_oioao1.webp' },
+      { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754241849/adecbig_f1kuvl.webp' }
+      //{ url: '' }
     ],
     amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning', 'Cinema Room'],
     roomDetails: {
@@ -123,7 +123,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Private one-bedroom apartment with kitchen and bathroom',
         features: ['Private bedroom', 'Private kitchen', 'Private bathroom', 'Living area', 'Study desk'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249956/1_Bed_Apartment1_ttfjhs.webp', caption: '1 bed apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249957/1_Bed_Apartment2_hztft9.webp', caption: '1 bed apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249959/1_Bed_Apartment3_ohdr3r.webp', caption: '1 bed apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249961/1_Bed_Apartment4_zz9mta.webp', caption: '1 bed apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249963/1_Bed_Apartment5_z6svrw.webp', caption: '1 bed apartment' }  
         ],
         bedCount: 1,
         bathroomType: 'private',
