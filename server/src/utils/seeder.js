@@ -79,12 +79,366 @@ const sampleUser = {
 };
 
 // Sample Properties
+// Sample Properties with ALL Room Types
 const getSampleProperties = (cities, userId) => [
-    // AUSTRALIA PROPERTIES - ADD THESE
-  
+  // ADELAIDE CITY
   {
-    name: 'Berkley Street',
-    description: 'Want a room that’s just what you’re looking for? At this Elizabeth Street address, you’ll find one-person studios and six-bedroom townhouses (with everything in between). And they all include Smart TVs, super-fast wifi and air con. And that\'s not all. When deadlines loom, hit the communal study room or grab a study pod. Alternatively, avoid work altogether on our sunny terrace with skyscraper views, inside the gym or in our cinema room, bingeing on movie collections! Living with 330+ other Yugoers, there’ll always be someone who wants to join you.',
+    name: 'Yugo Adelaide City',
+    description: 'Squeezing the juice out of co-living, that\'s Adelaide City. Of course, there are private spaces – our studio apartments are great for that! But with over 700 students, the social potential is off the scale.',
+    propertyType: 'apartment',
+    price: {
+      amount: 350,
+      currency: 'AUD$',
+      period: 'week'
+    },
+    location: {
+      address: 'Adelaide City, 269 North Terrace, Adelaide, SA 5000',
+      city: cities.find(c => c.name === 'Adelaide')._id,
+      coordinates: {
+        lat: -34.9285,
+        lng: 138.6007
+      },
+      nearbyUniversities: [
+        { name: 'The University of Adelaide', distance: 0.1 },
+        { name: 'University of South Australia', distance: 0.9 },
+        { name: 'Torrens University Australia', distance: 0.9 }
+      ]
+    },
+    images: [
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'Adelaide City Building' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Common Area' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Study Space' }
+    ],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning', 'Cinema Room'],
+    roomDetails: {
+      totalRooms: 700,
+      availableRooms: 50,
+      bathroomType: 'mixed'
+    },
+    roomTypes: [
+      {
+        type: '1-bed-apartment',
+        name: '1 Bed Apartment',
+        price: { amount: 450, currency: 'AUD$', period: 'week' },
+        description: 'Private one-bedroom apartment with kitchen and bathroom',
+        features: ['Private bedroom', 'Private kitchen', 'Private bathroom', 'Living area', 'Study desk'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed apartment' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        bedType: 'double'
+      },
+      {
+        type: '2-bed-shared-apartment',
+        name: '2 Bed Shared Apartment',
+        price: { amount: 380, currency: 'AUD$', period: 'week' },
+        description: 'Shared two-bedroom apartment with common areas',
+        features: ['Shared bedrooms', 'Shared kitchen', 'Shared bathroom', 'Common living area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed shared apartment' }
+        ],
+        bedCount: 2,
+        bathroomType: 'shared',
+        bedType: 'single'
+      },
+      {
+        type: '4-bed-shared-apartment',
+        name: '4 Bed Shared Apartment',
+        price: { amount: 320, currency: 'AUD$', period: 'week' },
+        description: 'Four-bedroom shared apartment ideal for groups',
+        features: ['4 bedrooms', 'Shared kitchen', 'Shared bathrooms', 'Common areas'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '4 bed shared apartment' }
+        ],
+        bedCount: 4,
+        bathroomType: 'shared',
+        bedType: 'single'
+      },
+      {
+        type: '4-bed-shared-apartment-large',
+        name: '4 Bed Shared Apartment (Large)',
+        price: { amount: 340, currency: 'AUD$', period: 'week' },
+        description: 'Spacious four-bedroom shared apartment with extra living space',
+        features: ['4 large bedrooms', 'Spacious kitchen', 'Multiple bathrooms', 'Large common area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '4 bed large apartment' }
+        ],
+        bedCount: 4,
+        bathroomType: 'shared',
+        roomSize: 'large',
+        bedType: 'single'
+      },
+      {
+        type: '5-bed-ensuite',
+        name: '5 Bed Ensuite',
+        price: { amount: 390, currency: 'AUD$', period: 'week' },
+        description: 'Five-bedroom apartment with ensuite bathrooms',
+        features: ['5 bedrooms', 'Ensuite bathrooms', 'Shared kitchen', 'Common living area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite' }
+        ],
+        bedCount: 5,
+        bathroomType: 'ensuite',
+        bedType: 'single'
+      },
+      {
+        type: '5-bed-shared-apartment',
+        name: '5 Bed Shared Apartment',
+        price: { amount: 310, currency: 'AUD$', period: 'week' },
+        description: 'Five-bedroom shared apartment with communal facilities',
+        features: ['5 bedrooms', 'Shared bathrooms', 'Large kitchen', 'Study areas'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed shared apartment' }
+        ],
+        bedCount: 5,
+        bathroomType: 'shared',
+        bedType: 'single'
+      },
+      {
+        type: 'single-ensuite',
+        name: 'Single Ensuite',
+        price: { amount: 420, currency: 'AUD$', period: 'week' },
+        description: 'Private single room with ensuite bathroom',
+        features: ['Private bedroom', 'Ensuite bathroom', 'Shared kitchen', 'Study desk'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Single ensuite room' }
+        ],
+        bedCount: 1,
+        bathroomType: 'ensuite',
+        bedType: 'single'
+      },
+      {
+        type: 'studio',
+        name: 'Studio',
+        price: { amount: 480, currency: 'AUD$', period: 'week' },
+        description: 'Self-contained studio apartment',
+        features: ['Private studio', 'Kitchenette', 'Private bathroom', 'Study area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio apartment' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        bedType: 'double'
+      },
+      {
+        type: 'studio-large',
+        name: 'Studio (Large)',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Spacious self-contained studio apartment',
+        features: ['Large studio space', 'Full kitchen', 'Private bathroom', 'Extra storage'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Large studio apartment' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        roomSize: 'large',
+        bedType: 'double'
+      },
+      {
+        type: 'studio-dda',
+        name: 'Studio DDA',
+        price: { amount: 480, currency: 'AUD$', period: 'week' },
+        description: 'Disability-accessible studio apartment',
+        features: ['DDA compliant', 'Accessible bathroom', 'Kitchenette', 'Emergency assistance'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'DDA studio' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        isDDA: true,
+        bedType: 'single'
+      }
+    ],
+    rules: { smoking: false, pets: false, visitors: true, minStay: 6 },
+    owner: userId,
+    verified: true,
+    featured: true,
+    rating: { average: 4.8, count: 22 },
+    availability: true
+  },
+
+  // PERTH CITY
+  {
+    name: 'Yugo Perth City',
+    description: 'Experience best-in-class student living at Yugo Perth City! Our prime location provides convenient access to bus stops and Perth Railway Station, seamlessly connecting you to major universities.',
+    propertyType: 'apartment',
+    price: {
+      amount: 380,
+      currency: 'AUD$',
+      period: 'week'
+    },
+    location: {
+      address: 'Yugo Perth City, 89 Stirling Street, Perth, 6000',
+      city: cities.find(c => c.name === 'Perth')._id,
+      coordinates: {
+        lat: -31.9505,
+        lng: 115.8605
+      },
+      nearbyUniversities: [
+        { name: 'Curtin University', distance: 0.1 },
+        { name: 'The University of Western Australia', distance: 0.9 },
+        { name: 'UHI Perth', distance: 0.9 }
+      ]
+    },
+    images: [
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'Perth City Building' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Pool Area' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Rooftop Terrace' }
+    ],
+    amenities: ['WiFi', 'Gym', 'Pool', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning', 'Cinema Room', 'Games Room', 'Rooftop Terrace'],
+    roomDetails: {
+      totalRooms: 400,
+      availableRooms: 35,
+      bathroomType: 'mixed'
+    },
+    roomTypes: [
+      {
+        type: '5-bed-ensuite-apartment',
+        name: '5 Bed Ensuite Apartment',
+        price: { amount: 360, currency: 'AUD$', period: 'week' },
+        description: 'Five-bedroom apartment with ensuite bathrooms',
+        features: ['5 bedrooms', 'Ensuite bathrooms', 'Shared kitchen', 'Common living area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite' }
+        ],
+        bedCount: 5,
+        bathroomType: 'ensuite'
+      },
+      {
+        type: '5-bed-ensuite-apartment-high-floor',
+        name: '5 Bed Ensuite Apartment High Floor',
+        price: { amount: 390, currency: 'AUD$', period: 'week' },
+        description: 'Five-bedroom apartment with ensuite bathrooms on high floor with city views',
+        features: ['5 bedrooms', 'Ensuite bathrooms', 'City views', 'High floor location'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite high floor' }
+        ],
+        bedCount: 5,
+        bathroomType: 'ensuite',
+        floor: 'high',
+        hasView: true,
+        viewType: 'city'
+      },
+      {
+        type: '5-bed-shared-apartment',
+        name: '5 Bed Shared Apartment',
+        price: { amount: 320, currency: 'AUD$', period: 'week' },
+        description: 'Five-bedroom shared apartment with communal facilities',
+        features: ['5 bedrooms', 'Shared bathrooms', 'Large kitchen', 'Study areas'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed shared apartment' }
+        ],
+        bedCount: 5,
+        bathroomType: 'shared'
+      },
+      {
+        type: '5-bed-shared-apartment-high-floor',
+        name: '5 Bed Shared Apartment High Floor',
+        price: { amount: 340, currency: 'AUD$', period: 'week' },
+        description: 'Five-bedroom shared apartment on high floor with views',
+        features: ['5 bedrooms', 'Shared bathrooms', 'High floor', 'City views'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed shared high floor' }
+        ],
+        bedCount: 5,
+        bathroomType: 'shared',
+        floor: 'high',
+        hasView: true
+      },
+      {
+        type: '6-bed-shared-apartment',
+        name: '6 Bed Shared Apartment',
+        price: { amount: 300, currency: 'AUD$', period: 'week' },
+        description: 'Six-bedroom shared apartment for large groups',
+        features: ['6 bedrooms', 'Multiple bathrooms', 'Large kitchen', 'Common areas'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed shared apartment' }
+        ],
+        bedCount: 6,
+        bathroomType: 'shared'
+      },
+      {
+        type: '6-bed-shared-apartment-high-floor',
+        name: '6 Bed Shared Apartment High Floor',
+        price: { amount: 320, currency: 'AUD$', period: 'week' },
+        description: 'Six-bedroom shared apartment on high floor',
+        features: ['6 bedrooms', 'Multiple bathrooms', 'High floor views', 'Large common area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed shared high floor' }
+        ],
+        bedCount: 6,
+        bathroomType: 'shared',
+        floor: 'high',
+        hasView: true
+      },
+      {
+        type: 'studio',
+        name: 'Studio',
+        price: { amount: 480, currency: 'AUD$', period: 'week' },
+        description: 'Self-contained studio apartment',
+        features: ['Private studio', 'Kitchenette', 'Private bathroom', 'Study area'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio apartment' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private'
+      },
+      {
+        type: 'studio-high-floor',
+        name: 'Studio High Floor',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Studio apartment on high floor with city views',
+        features: ['Private studio', 'High floor location', 'City views', 'Kitchenette'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio high floor' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        floor: 'high',
+        hasView: true
+      },
+      {
+        type: 'twin-studio',
+        name: 'Twin Studio',
+        price: { amount: 420, currency: 'AUD$', period: 'week' },
+        description: 'Studio apartment with twin beds for sharing',
+        features: ['Twin beds', 'Shared studio space', 'Kitchenette', 'Private bathroom'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Twin studio' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        bedType: 'twin'
+      },
+      {
+        type: 'twin-studio-high-floor',
+        name: 'Twin Studio High Floor',
+        price: { amount: 450, currency: 'AUD$', period: 'week' },
+        description: 'Twin studio on high floor with panoramic views',
+        features: ['Twin beds', 'High floor views', 'Kitchenette', 'Premium location'],
+        images: [
+          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Twin studio high floor' }
+        ],
+        bedCount: 1,
+        bathroomType: 'private',
+        bedType: 'twin',
+        floor: 'high',
+        hasView: true
+      }
+    ],
+    rules: { smoking: false, pets: false, visitors: true, minStay: 6 },
+    owner: userId,
+    verified: true,
+    featured: true,
+    rating: { average: 4.6, count: 19 },
+    availability: true
+  },
+
+  // BERKELEY STREET MELBOURNE
+  {
+    name: 'Yugo Berkeley Street',
+    description: 'Want a room that\'s just what you\'re looking for? At this Elizabeth Street address, you\'ll find one-person studios and six-bedroom townhouses (with everything in between).',
     propertyType: 'apartment',
     price: {
       amount: 400,
@@ -95,8 +449,8 @@ const getSampleProperties = (cities, userId) => [
       address: 'Yugo Berkeley Street, 145 Berkeley Street, Melbourne, 3000',
       city: cities.find(c => c.name === 'Melbourne')._id,
       coordinates: {
-        lat: 51.4988,
-        lng: -0.1749
+        lat: -37.8136,
+        lng: 144.9631
       },
       nearbyUniversities: [
         { name: 'University of Melbourne', distance: 0.1 },
@@ -105,35 +459,201 @@ const getSampleProperties = (cities, userId) => [
       ]
     },
     images: [
-      { url: '' },
-      { url: '' },
-      { url: '' }
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'Berkeley Street Building' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Rooftop Terrace' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Cinema Room' }
     ],
-    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning', 'Cinema Room', 'Rooftop Terrace'],
     roomDetails: {
-      totalRooms: 20,
-      availableRooms: 7,
-      bathroomType: 'private'
+      totalRooms: 330,
+      availableRooms: 25,
+      bathroomType: 'mixed'
     },
-    rules: {
-      smoking: false,
-      pets: false,
-      visitors: true,
-      minStay: 6
-    },
+    roomTypes: [
+      {
+        type: '1-bed-apartment',
+        name: '1 Bed Apartment',
+        price: { amount: 550, currency: 'AUD$', period: 'week' },
+        description: 'Private one-bedroom apartment with full facilities',
+        features: ['Private bedroom', 'Private kitchen', 'Private bathroom', 'Living area'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed apartment' }],
+        bedCount: 1, bathroomType: 'private'
+      },
+      {
+        type: '3-bed-apartment',
+        name: '3 Bed Apartment',
+        price: { amount: 420, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom apartment for sharing',
+        features: ['3 bedrooms', 'Shared kitchen', 'Shared bathrooms', 'Common living area'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed apartment' }],
+        bedCount: 3, bathroomType: 'shared'
+      },
+      {
+        type: '3-bed-apartment-top-floor',
+        name: '3 Bed Apartment Top Floor',
+        price: { amount: 450, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom apartment on top floor with premium views',
+        features: ['3 bedrooms', 'Top floor location', 'Premium views', 'Shared facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed top floor' }],
+        bedCount: 3, bathroomType: 'shared', floor: 'top', hasView: true
+      },
+      {
+        type: '3-bed-apartment-with-terrace',
+        name: '3 Bed Apartment with Terrace',
+        price: { amount: 480, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom apartment with private terrace access',
+        features: ['3 bedrooms', 'Private terrace', 'Outdoor space', 'Shared facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed with terrace' }],
+        bedCount: 3, bathroomType: 'shared', hasTerrace: true
+      },
+      {
+        type: '3-bed-apartment-with-terrace-upper',
+        name: '3 Bed Apartment with Terrace Upper',
+        price: { amount: 500, currency: 'AUD$', period: 'week' },
+        description: 'Upper floor three-bedroom apartment with terrace',
+        features: ['3 bedrooms', 'Upper floor', 'Private terrace', 'Premium location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed terrace upper' }],
+        bedCount: 3, bathroomType: 'shared', hasTerrace: true, floor: 'upper'
+      },
+      {
+        type: '3-bed-ensuite-apartment',
+        name: '3 Bed Ensuite Apartment',
+        price: { amount: 470, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom apartment with ensuite bathrooms',
+        features: ['3 bedrooms', 'Ensuite bathrooms', 'Shared kitchen', 'Privacy'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed ensuite' }],
+        bedCount: 3, bathroomType: 'ensuite'
+      },
+      {
+        type: '3-bed-ensuite-apartment-with-terrace',
+        name: '3 Bed Ensuite Apartment with Terrace',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Premium three-bedroom ensuite apartment with terrace',
+        features: ['3 bedrooms', 'Ensuite bathrooms', 'Private terrace', 'Premium amenities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed ensuite terrace' }],
+        bedCount: 3, bathroomType: 'ensuite', hasTerrace: true
+      },
+      {
+        type: '6-bed-townhouse',
+        name: '6 Bed Townhouse',
+        price: { amount: 350, currency: 'AUD$', period: 'week' },
+        description: 'Spacious six-bedroom townhouse for large groups',
+        features: ['6 bedrooms', 'Multiple bathrooms', 'Full kitchen', 'Living areas', 'Outdoor space'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed townhouse' }],
+        bedCount: 6, bathroomType: 'shared'
+      },
+      {
+        type: '6-bed-townhouse-city-view',
+        name: '6 Bed Townhouse City View',
+        price: { amount: 380, currency: 'AUD$', period: 'week' },
+        description: 'Six-bedroom townhouse with stunning city views',
+        features: ['6 bedrooms', 'City views', 'Multiple levels', 'Premium location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed townhouse city view' }],
+        bedCount: 6, bathroomType: 'shared', hasView: true, viewType: 'city'
+      },
+      {
+        type: 'dda-studio',
+        name: 'DDA Studio',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Disability-accessible studio apartment',
+        features: ['DDA compliant', 'Accessible facilities', 'Private bathroom', 'Kitchenette'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'DDA studio' }],
+        bedCount: 1, bathroomType: 'private', isDDA: true
+      },
+      {
+        type: 'executive-studio',
+        name: 'Executive Studio',
+        price: { amount: 580, currency: 'AUD$', period: 'week' },
+        description: 'Premium executive studio with high-end finishes',
+        features: ['Executive finishes', 'Premium appliances', 'Large space', 'Study area'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'executive'
+      },
+      {
+        type: 'executive-studio-lower',
+        name: 'Executive Studio Lower',
+        price: { amount: 560, currency: 'AUD$', period: 'week' },
+        description: 'Executive studio on lower floor',
+        features: ['Executive finishes', 'Lower floor', 'Easy access', 'Premium amenities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio lower' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'executive', floor: 'lower'
+      },
+      {
+        type: 'executive-studio-with-cbd-view',
+        name: 'Executive Studio with CBD View',
+        price: { amount: 620, currency: 'AUD$', period: 'week' },
+        description: 'Executive studio with stunning CBD views',
+        features: ['Executive finishes', 'CBD views', 'Premium location', 'Large windows'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio CBD view' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'executive', hasView: true, viewType: 'cbd'
+      },
+      {
+        type: 'executive-studio-with-terrace',
+        name: 'Executive Studio with Terrace',
+        price: { amount: 650, currency: 'AUD$', period: 'week' },
+        description: 'Executive studio with private terrace',
+        features: ['Executive finishes', 'Private terrace', 'Outdoor space', 'Premium amenities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio terrace' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'executive', hasTerrace: true
+      },
+      {
+        type: 'executive-studio-with-terrace-upper',
+        name: 'Executive Studio with Terrace Upper',
+        price: { amount: 670, currency: 'AUD$', period: 'week' },
+        description: 'Upper floor executive studio with terrace',
+        features: ['Executive finishes', 'Upper floor', 'Private terrace', 'Premium views'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio terrace upper' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'executive', hasTerrace: true, floor: 'upper'
+      },
+      {
+        type: 'premium-studio',
+        name: 'Premium Studio',
+        price: { amount: 540, currency: 'AUD$', period: 'week' },
+        description: 'Premium studio apartment with modern amenities',
+        features: ['Premium finishes', 'Modern appliances', 'Spacious layout', 'Study area'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Premium studio' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'premium'
+      },
+      {
+        type: 'premium-studio-with-cbd-view',
+        name: 'Premium Studio with CBD View',
+        price: { amount: 580, currency: 'AUD$', period: 'week' },
+        description: 'Premium studio with CBD views',
+        features: ['Premium finishes', 'CBD views', 'Large windows', 'Modern amenities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Premium studio CBD view' }],
+                bedCount: 1, bathroomType: 'private', roomSize: 'premium', hasView: true, viewType: 'cbd'
+      },
+      {
+        type: 'studio-with-terrace',
+        name: 'Studio with Terrace',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Studio apartment with private terrace access',
+        features: ['Private terrace', 'Outdoor space', 'Kitchenette', 'Natural light'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio with terrace' }],
+        bedCount: 1, bathroomType: 'private', hasTerrace: true
+      },
+      {
+        type: 'studio-with-terrace-upper',
+        name: 'Studio with Terrace Upper',
+        price: { amount: 540, currency: 'AUD$', period: 'week' },
+        description: 'Upper floor studio with terrace and city views',
+        features: ['Upper floor', 'Private terrace', 'City views', 'Premium location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio terrace upper' }],
+        bedCount: 1, bathroomType: 'private', hasTerrace: true, floor: 'upper'
+      }
+    ],
+    rules: { smoking: false, pets: false, visitors: true, minStay: 6 },
     owner: userId,
     verified: true,
     featured: true,
-    rating: {
-      average: 4.8,
-      count: 22
-    },
+    rating: { average: 4.8, count: 22 },
     availability: true
   },
-  
+
+  // UNIVERSITY SQUARE MELBOURNE
   {
     name: 'University Square',
-    description: 'Want a top-notch studio with your own private terrace? Or how about a sociable six-bed apartment? With 20 different room styles, chances are we’ve got what you’re looking for. And even if you prefer to fly solo, with 340+ other students living here, finding a workout buddy for the gym or a bbq buddy for a cook up on the terrace won’t be a problem. Even better, at this Carlton address, not far from Little Italy, you’re just over the road from Melbourne Uni. You’ll never be late for lectures again!',
+    description: 'Want a top-notch studio with your own private terrace? Or how about a sociable six-bed apartment? With 20 different room styles, chances are we\'ve got what you\'re looking for.',
     propertyType: 'apartment',
     price: {
       amount: 400,
@@ -144,8 +664,8 @@ const getSampleProperties = (cities, userId) => [
       address: 'University Square, 85 Barry Street, Carlton, 3053',
       city: cities.find(c => c.name === 'Melbourne')._id,
       coordinates: {
-        lat: 51.4988,
-        lng: -0.1749
+        lat: -37.8014,
+        lng: 144.9633
       },
       nearbyUniversities: [
         { name: 'University of Melbourne', distance: 0.1 },
@@ -154,270 +674,203 @@ const getSampleProperties = (cities, userId) => [
       ]
     },
     images: [
-      { url: '' },
-      { url: '' },
-      { url: '' }
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'University Square Building' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Study Areas' },
+      { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Common Facilities' }
     ],
-    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
+    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning', 'BBQ Area'],
     roomDetails: {
-      totalRooms: 20,
-      availableRooms: 7,
-      bathroomType: 'private'
+      totalRooms: 340,
+      availableRooms: 30,
+      bathroomType: 'mixed'
     },
-    rules: {
-      smoking: false,
-      pets: false,
-      visitors: true,
-      minStay: 6
-    },
+    roomTypes: [
+      {
+        type: '1-bed-apartment-lower',
+        name: '1 Bed Apartment Lower',
+        price: { amount: 500, currency: 'AUD$', period: 'week' },
+        description: 'One-bedroom apartment on lower floor with easy access',
+        features: ['Private bedroom', 'Lower floor', 'Easy access', 'Private facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed lower' }],
+        bedCount: 1, bathroomType: 'private', floor: 'lower'
+      },
+      {
+        type: '1-bed-apartment-upper',
+        name: '1 Bed Apartment Upper',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'One-bedroom apartment on upper floor with better views',
+        features: ['Private bedroom', 'Upper floor', 'Better views', 'Private facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed upper' }],
+        bedCount: 1, bathroomType: 'private', floor: 'upper'
+      },
+      {
+        type: '1-bed-apartment-with-terrace',
+        name: '1 Bed Apartment with Terrace',
+        price: { amount: 580, currency: 'AUD$', period: 'week' },
+        description: 'One-bedroom apartment with private terrace',
+        features: ['Private bedroom', 'Private terrace', 'Outdoor space', 'Premium location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed terrace' }],
+        bedCount: 1, bathroomType: 'private', hasTerrace: true
+      },
+      {
+        type: '2-bed-apartment',
+        name: '2 Bed Apartment',
+        price: { amount: 420, currency: 'AUD$', period: 'week' },
+        description: 'Two-bedroom apartment perfect for sharing',
+        features: ['2 bedrooms', 'Shared facilities', 'Common living area', 'Study spaces'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed apartment' }],
+        bedCount: 2, bathroomType: 'shared'
+      },
+      {
+        type: '2-bed-apartment-with-terrace-lower',
+        name: '2 Bed Apartment with Terrace – Lower',
+        price: { amount: 450, currency: 'AUD$', period: 'week' },
+        description: 'Lower floor two-bedroom apartment with terrace access',
+        features: ['2 bedrooms', 'Lower floor', 'Terrace access', 'Easy access'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed terrace lower' }],
+        bedCount: 2, bathroomType: 'shared', hasTerrace: true, floor: 'lower'
+      },
+      {
+        type: '2-bed-apartment-with-terrace-upper',
+        name: '2 Bed Apartment with Terrace – Upper',
+        price: { amount: 480, currency: 'AUD$', period: 'week' },
+        description: 'Upper floor two-bedroom apartment with terrace and views',
+        features: ['2 bedrooms', 'Upper floor', 'Private terrace', 'Better views'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed terrace upper' }],
+        bedCount: 2, bathroomType: 'shared', hasTerrace: true, floor: 'upper'
+      },
+      {
+        type: '3-bed-apartment-lower',
+        name: '3 Bed Apartment Lower',
+        price: { amount: 380, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom apartment on lower floor',
+        features: ['3 bedrooms', 'Lower floor', 'Shared facilities', 'Easy access'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed lower' }],
+        bedCount: 3, bathroomType: 'shared', floor: 'lower'
+      },
+      {
+        type: '3-bed-apartment-upper',
+        name: '3 Bed Apartment Upper',
+        price: { amount: 400, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom apartment on upper floor with views',
+        features: ['3 bedrooms', 'Upper floor', 'Better views', 'Shared facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed upper' }],
+        bedCount: 3, bathroomType: 'shared', floor: 'upper'
+      },
+      {
+        type: '3-bed-duplex-with-terrace',
+        name: '3 Bed Duplex with Terrace',
+        price: { amount: 460, currency: 'AUD$', period: 'week' },
+        description: 'Three-bedroom duplex apartment with private terrace',
+        features: ['3 bedrooms', 'Duplex layout', 'Private terrace', 'Multiple levels'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed duplex terrace' }],
+        bedCount: 3, bathroomType: 'shared', hasTerrace: true
+      },
+      {
+        type: '4-bed-apartment',
+        name: '4 Bed Apartment',
+        price: { amount: 350, currency: 'AUD$', period: 'week' },
+        description: 'Four-bedroom apartment for group living',
+        features: ['4 bedrooms', 'Shared facilities', 'Large common area', 'Group friendly'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '4 bed apartment' }],
+        bedCount: 4, bathroomType: 'shared'
+      },
+      {
+        type: '6-bed-apartment-lower-bunk-cabin',
+        name: '6 Bed Apartment Lower (Bunk Cabin)',
+        price: { amount: 280, currency: 'AUD$', period: 'week' },
+        description: 'Budget-friendly six-bed apartment with bunk beds on lower floor',
+        features: ['6 bunk beds', 'Lower floor', 'Budget option', 'Shared facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed bunk lower' }],
+        bedCount: 6, bathroomType: 'shared', bedType: 'bunk', floor: 'lower'
+      },
+      {
+        type: '6-bed-apartment-with-terrace-bunk-cabin',
+        name: '6 Bed Apartment with Terrace (Bunk Cabin)',
+        price: { amount: 300, currency: 'AUD$', period: 'week' },
+        description: 'Six-bed bunk apartment with terrace access',
+        features: ['6 bunk beds', 'Terrace access', 'Outdoor space', 'Budget friendly'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed bunk terrace' }],
+        bedCount: 6, bathroomType: 'shared', bedType: 'bunk', hasTerrace: true
+      },
+      {
+        type: '6-bed-apartments-upper-bunk-cabin',
+        name: '6-bed Apartments Upper (Bunk Cabin)',
+        price: { amount: 290, currency: 'AUD$', period: 'week' },
+        description: 'Upper floor six-bed bunk apartment',
+        features: ['6 bunk beds', 'Upper floor', 'Budget option', 'Shared facilities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed bunk upper' }],
+        bedCount: 6, bathroomType: 'shared', bedType: 'bunk', floor: 'upper'
+      },
+      {
+        type: 'dda-studio',
+        name: 'DDA Studio',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Fully accessible studio apartment',
+        features: ['DDA compliant', 'Accessible bathroom', 'Accessible kitchen', 'Support features'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'DDA studio' }],
+        bedCount: 1, bathroomType: 'private', isDDA: true
+      },
+      {
+        type: 'premium-studio',
+        name: 'Premium Studio',
+        price: { amount: 540, currency: 'AUD$', period: 'week' },
+        description: 'High-end studio with premium finishes',
+        features: ['Premium finishes', 'High-end appliances', 'Spacious layout', 'Modern design'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Premium studio' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'premium'
+      },
+      {
+        type: 'premium-studio-with-terrace',
+        name: 'Premium Studio with Terrace',
+        price: { amount: 580, currency: 'AUD$', period: 'week' },
+        description: 'Premium studio with private terrace',
+        features: ['Premium finishes', 'Private terrace', 'Outdoor space', 'High-end amenities'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Premium studio terrace' }],
+        bedCount: 1, bathroomType: 'private', roomSize: 'premium', hasTerrace: true
+      },
+      {
+        type: 'studio-lower',
+        name: 'Studio Lower',
+        price: { amount: 460, currency: 'AUD$', period: 'week' },
+        description: 'Studio apartment on lower floor',
+        features: ['Lower floor', 'Easy access', 'Private facilities', 'Convenient location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio lower' }],
+        bedCount: 1, bathroomType: 'private', floor: 'lower'
+      },
+      {
+        type: 'studio-upper',
+        name: 'Studio Upper',
+        price: { amount: 480, currency: 'AUD$', period: 'week' },
+        description: 'Studio apartment on upper floor with views',
+        features: ['Upper floor', 'Better views', 'Private facilities', 'Quiet location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio upper' }],
+        bedCount: 1, bathroomType: 'private', floor: 'upper'
+      },
+      {
+        type: 'studio-with-terrace',
+        name: 'Studio with Terrace',
+        price: { amount: 520, currency: 'AUD$', period: 'week' },
+        description: 'Studio apartment with private outdoor terrace',
+        features: ['Private terrace', 'Outdoor space', 'Natural light', 'Premium location'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio terrace' }],
+        bedCount: 1, bathroomType: 'private', hasTerrace: true
+      },
+      {
+        type: 'twin-studio',
+        name: 'Twin Studio',
+        price: { amount: 420, currency: 'AUD$', period: 'week' },
+        description: 'Studio with twin beds for sharing',
+        features: ['Twin beds', 'Shared studio space', 'Private facilities', 'Social option'],
+        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Twin studio' }],
+        bedCount: 1, bathroomType: 'private', bedType: 'twin'
+      }
+    ],
+    rules: { smoking: false, pets: false, visitors: true, minStay: 6 },
     owner: userId,
     verified: true,
     featured: true,
-    rating: {
-      average: 4.8,
-      count: 22
-    },
-    availability: true
-  },
-  
-  {
-    name: 'Yugo AdelaideCity',
-    description: 'Squeezing the juice out of co-living, that’s Adelaide City. Of course, there are private spaces – our studio apartments are great for that! But with over 700 students, the social potential is off the scale. And for starters, you don’t have to live alone. We’ve got shared apartments too. Plus communal spaces that make you feel a part of everything, whether you’re studying, working out or chilling in our cinema room. So whatever type of student accommodation you\'re looking for in Adelaide, you\'re likely to find it at Adelaide City. Got a lecture to go to? We’re near all the universities — including the University of Adelaide and the University of South Australia — so there’s never far to go.',
-    propertyType: 'apartment',
-    price: {
-      amount: 400,
-      currency: 'AUD$',
-      period: 'week'
-    },
-    location: {
-      address: 'Adelaide City, 269 North Terrace, Adelaide, SA 5000',
-      city: cities.find(c => c.name === 'Adelaide')._id,
-      coordinates: {
-        lat: '',
-        lng: ''
-      },
-      nearbyUniversities: [
-        { name: 'The University of Adelaide', distance: 0.1 },
-        { name: 'University of South Australia', distance: 0.9 },
-        { name: 'Torrens University Australia', distance: 0.9 }
-      ]
-    },
-    images: [
-      { url: '' },
-      { url: '' },
-      { url: '' }
-    ],
-    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
-    roomDetails: {
-      totalRooms: 20,
-      availableRooms: 7,
-      bathroomType: 'private'
-    },
-    rules: {
-      smoking: false,
-      pets: false,
-      visitors: true,
-      minStay: 6
-    },
-    owner: userId,
-    verified: true,
-    featured: true,
-    rating: {
-      average: 4.8,
-      count: 22
-    },
-    availability: true
-  },
-  
-  {
-    name: 'Perth City',
-    description: 'Experience best-in-class student living at Yugo Perth City! Our prime location provides convenient access to bus stops and Perth Railway Station, seamlessly connecting you to major universities. Choose from our diverse selection of fully furnished apartments, ranging from studios to spacious shared options. Here, you\'ll immerse yourself in a thriving community with an array of exceptional amenities, including a pool, gym, cinema, games room, study pods and rooftop terrace. As student accommodation in Perth goes, there\'s rarely so much to do under one roof! Also, Yugo Perth City was honoured with the Residential Architecture Award in 2019 for Purpose-Built Student Accommodation in Western Australia. Your ideal student living experience awaits!',
-    propertyType: 'apartment',
-    price: {
-      amount: 400,
-      currency: 'AUD$',
-      period: 'week'
-    },
-    location: {
-      address: 'Yugo Perth City, 89 Stirling Street, Perth, 6000',
-      city: cities.find(c => c.name === 'Perth')._id,
-      coordinates: {
-        lat: '',
-        lng: ''
-      },
-      nearbyUniversities: [
-        { name: 'Curtin University', distance: 0.1 },
-        { name: 'The University of Western Australia', distance: 0.9 },
-        { name: 'UHI Perth', distance: 0.9 }
-      ]
-    },
-    images: [
-      { url: '' },
-      { url: '' },
-      { url: '' }
-    ],
-    amenities: ['WiFi', 'Gym', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Air Conditioning'],
-    roomDetails: {
-      totalRooms: 20,
-      availableRooms: 7,
-      bathroomType: 'private'
-    },
-    rules: {
-      smoking: false,
-      pets: false,
-      visitors: true,
-      minStay: 6
-    },
-    owner: userId,
-    verified: true,
-    featured: true,
-    rating: {
-      average: 4.8,
-      count: 22
-    },
-    availability: true
-  },
-
-
-  {
-    name: 'Trinity Student Residence',
-    description: 'Modern student accommodation just 5 minutes walk from Trinity College Dublin. Features fully furnished rooms with high-speed WiFi, communal kitchens, and 24/7 security.',
-    propertyType: 'apartment',
-    price: {
-      amount: 850,
-      currency: 'EUR',
-      period: 'month'
-    },
-    location: {
-      address: '12 Nassau Street, Dublin 2, Ireland',
-      city: cities.find(c => c.name === 'Dublin')._id,
-      coordinates: {
-        lat: 53.3441,
-        lng: -6.2675
-      },
-      nearbyUniversities: [
-        { name: 'Trinity College Dublin', distance: 0.3 },
-        { name: 'University College Dublin', distance: 4.5 }
-      ]
-    },
-    images: [
-      { url: '/assets/property1-main.jpg', caption: 'Building exterior' },
-      { url: '/assets/property1-kitchen.jpg', caption: 'Shared kitchen' },
-      { url: '/assets/property1-room.jpg', caption: 'Sample room' }
-    ],
-    amenities: ['WiFi', 'Security', 'Laundry', 'Study Room', 'Kitchen', 'Gym'],
-    roomDetails: {
-      totalRooms: 25,
-      availableRooms: 8,
-      bathroomType: 'shared'
-    },
-    rules: {
-      smoking: false,
-      pets: false,
-      visitors: true,
-      minStay: 3
-    },
-    owner: userId,
-    verified: true,
-    featured: true,
-    rating: {
-      average: 4.5,
-      count: 12
-    },
-    availability: true
-  },
-  {
-    name: 'UCD Campus Lodge',
-    description: 'Premium student housing near University College Dublin with ensuite rooms and modern facilities. Perfect for international students.',
-    propertyType: 'shared',
-    price: {
-      amount: 750,
-      currency: 'EUR',
-      period: 'month'
-    },
-    location: {
-      address: '45 Belfield Avenue, Dublin 4, Ireland',
-      city: cities.find(c => c.name === 'Dublin')._id,
-      coordinates: {
-        lat: 53.3063,
-        lng: -6.2197
-      },
-      nearbyUniversities: [
-        { name: 'University College Dublin', distance: 0.5 },
-        { name: 'Trinity College Dublin', distance: 6.2 }
-      ]
-    },
-    images: [
-      { url: '/assets/property2-main.jpg', caption: 'Modern building' },
-      { url: '/assets/property2-room.jpg', caption: 'Ensuite room' },
-      { url: '/assets/property2-common.jpg', caption: 'Common area' }
-    ],
-    amenities: ['WiFi', 'Gym', 'Pool', 'Parking', 'Laundry', 'Security', 'Kitchen'],
-    roomDetails: {
-      totalRooms: 40,
-      availableRooms: 12,
-      bathroomType: 'private'
-    },
-    rules: {
-      smoking: false,
-      pets: false,
-      visitors: true,
-      minStay: 6
-    },
-    owner: userId,
-    verified: true,
-    featured: false,
-    rating: {
-      average: 4.2,
-      count: 8
-    },
-    availability: true
-  },
-  {
-    name: 'Dublin City Student Hub',
-    description: 'Central Dublin location with excellent transport links. Modern studio apartments and shared rooms available.',
-    propertyType: 'studio',
-    price: {
-      amount: 950,
-      currency: 'EUR',
-      period: 'month'
-    },
-    location: {
-      address: '78 Grafton Street, Dublin 1, Ireland',
-      city: cities.find(c => c.name === 'Dublin')._id,
-      coordinates: {
-        lat: 53.3498,
-        lng: -6.2603
-      },
-      nearbyUniversities: [
-        { name: 'Trinity College Dublin', distance: 0.8 },
-        { name: 'Dublin Institute of Technology', distance: 1.2 }
-      ]
-    },
-    images: [
-      { url: '/assets/property3-main.jpg', caption: 'City center location' },
-      { url: '/assets/property3-studio.jpg', caption: 'Studio apartment' },
-      { url: '/assets/property3-kitchen.jpg', caption: 'Modern kitchen' }
-    ],
-    amenities: ['WiFi', 'Security', 'Laundry', 'Air Conditioning', 'Kitchen'],
-    roomDetails: {
-      totalRooms: 30,
-      availableRooms: 6,
-      bathroomType: 'private'
-    },
-    rules: {
-      smoking: false,
-      pets: true,
-      visitors: true,
-      minStay: 1
-    },
-    owner: userId,
-    verified: true,
-    featured: true,
-    rating: {
-      average: 4.7,
-      count: 15
-    },
+    rating: { average: 4.8, count: 22 },
     availability: true
   }
 ];
