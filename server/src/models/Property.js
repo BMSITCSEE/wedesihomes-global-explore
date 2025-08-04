@@ -68,6 +68,11 @@ const propertySchema = new mongoose.Schema(
         'Kitchen',
         'Air Conditioning',
         'Heating',
+        'Cinema Room',
+        'Rooftop Terrace',
+        'BBQ Area',
+        'Games Room',
+        'Study Pods',
       ],
     }],
     roomDetails: {
@@ -78,6 +83,79 @@ const propertySchema = new mongoose.Schema(
         enum: ['private', 'shared'],
       },
     },
+    // NEW: Room Types with all variations
+    roomTypes: [{
+      type: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+      price: {
+        amount: {
+          type: Number,
+          required: true,
+        },
+        currency: {
+          type: String,
+          required: true,
+        },
+        period: {
+          type: String,
+          required: true,
+        }
+      },
+      description: String,
+      features: [String],
+      images: [{
+        url: String,
+        caption: String,
+      }],
+      available: {
+        type: Boolean,
+        default: true,
+      },
+      floor: {
+        type: String,
+        enum: ['lower', 'upper', 'high', 'top', 'ground'],
+      },
+      hasView: {
+        type: Boolean,
+        default: false,
+      },
+      viewType: {
+        type: String,
+        enum: ['city', 'cbd', 'terrace', 'garden'],
+      },
+      hasTerrace: {
+        type: Boolean,
+        default: false,
+      },
+      isDDA: {
+        type: Boolean,
+        default: false,
+      },
+      bedCount: {
+        type: Number,
+        min: 1,
+        max: 10,
+      },
+      bathroomType: {
+        type: String,
+        enum: ['private', 'shared', 'ensuite'],
+      },
+      roomSize: {
+        type: String,
+        enum: ['small', 'medium', 'large', 'executive', 'premium'],
+      },
+      bedType: {
+        type: String,
+        enum: ['single', 'twin', 'double', 'bunk'],
+      },
+      specialFeatures: [String],
+    }],
     rules: {
       smoking: {
         type: Boolean,
@@ -134,5 +212,7 @@ const propertySchema = new mongoose.Schema(
 // Add indexes for better query performance
 propertySchema.index({ 'location.city': 1, price: 1 });
 propertySchema.index({ name: 'text', description: 'text' });
+propertySchema.index({ 'roomTypes.type': 1 });
+propertySchema.index({ 'roomTypes.price.amount': 1 });
 
 module.exports = mongoose.model('Property', propertySchema);
