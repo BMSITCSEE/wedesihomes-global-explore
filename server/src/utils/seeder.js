@@ -426,7 +426,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Six-bedroom shared apartment on high floor',
         features: ['6 bedrooms', 'Multiple bathrooms', 'High floor views', 'Large common area'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed shared high floor' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248076/6_Bed_Shared_Apartment_High_Floor1_frq4xj.webp', caption: '6 bed shared high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248089/6_Bed_Shared_Apartment_High_Floor2_bevsbz.webp', caption: '6 bed shared high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248090/6_Bed_Shared_Apartment_High_Floor3_y7ozkx.webp', caption: '6 bed shared high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248090/6_Bed_Shared_Apartment_High_Floor4_erpokl.webp', caption: '6 bed shared high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248093/6_Bed_Shared_Apartment_High_Floor5_kq0zse.webp', caption: '6 bed shared high floor' }
         ],
         bedCount: 6,
         bathroomType: 'shared',
@@ -440,7 +444,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Self-contained studio apartment',
         features: ['Private studio', 'Kitchenette', 'Private bathroom', 'Study area'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248140/Studio1_bj8j06.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248142/Studio2_tq2cga.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248145/Studio3_u6iyrs.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248147/Studio4_uzw8zh.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248148/Studio5_jhtwhq.webp', caption: 'Studio apartment' }
         ],
         bedCount: 1,
         bathroomType: 'private'
@@ -452,7 +460,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Studio apartment on high floor with city views',
         features: ['Private studio', 'High floor location', 'City views', 'Kitchenette'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio high floor' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248117/Studio_High_Floor1_synmdg.webp', caption: 'Studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248118/Studio_High_Floor2_jjqgkl.webp', caption: 'Studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248123/Studio_High_Floor3_mrjryq.webp', caption: 'Studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248123/Studio_High_Floor4_tnmvtj.webp', caption: 'Studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248126/Studio_High_Floor5_ksol3e.webp', caption: 'Studio high floor' }
         ],
         bedCount: 1,
         bathroomType: 'private',
@@ -466,7 +478,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Studio apartment with twin beds for sharing',
         features: ['Twin beds', 'Shared studio space', 'Kitchenette', 'Private bathroom'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Twin studio' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248182/Twin_Studio1_vdoq7y.webp', caption: 'Twin studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248183/Twin_Studio2_bxamyu.webp', caption: 'Twin studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248186/Twin_Studio3_zgougz.webp', caption: 'Twin studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248187/Twin_Studio4_umzlnp.webp', caption: 'Twin studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248190/Twin_Studio5_nm6y6e.webp', caption: 'Twin studio' }
         ],
         bedCount: 1,
         bathroomType: 'private',
@@ -479,7 +495,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Twin studio on high floor with panoramic views',
         features: ['Twin beds', 'High floor views', 'Kitchenette', 'Premium location'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Twin studio high floor' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248164/Twin_Studio_High_Floor1_uhps7l.webp', caption: 'Twin studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248165/Twin_Studio_High_Floor2_pzkdra.webp', caption: 'Twin studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248168/Twin_Studio_High_Floor3_raqjoe.webp', caption: 'Twin studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248170/Twin_Studio_High_Floor4_ct73lq.webp', caption: 'Twin studio high floor' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754248173/Twin_Studio_High_Floor5_sjwih7.webp', caption: 'Twin studio high floor' }
         ],
         bedCount: 1,
         bathroomType: 'private',
