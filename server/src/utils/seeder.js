@@ -105,7 +105,7 @@ const getSampleProperties = (cities, userId) => [
       ]
     },
     images: [
-      { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754241848/adec1_oioao1.webp' },
+      { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754241849/adecbig_f1kuvl.webp' },
       { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754241849/adecbig_f1kuvl.webp' }
       //{ url: '' }
     ],
@@ -140,7 +140,12 @@ const getSampleProperties = (cities, userId) => [
         description: 'Shared two-bedroom apartment with common areas',
         features: ['Shared bedrooms', 'Shared kitchen', 'Shared bathroom', 'Common living area'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed shared apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249974/2_Bed_Shared_Apartment1_vkumy8.webp', caption: '2 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249975/2_Bed_Shared_Apartment2_v1mkps.webp', caption: '2 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249977/2_Bed_Shared_Apartment3_frcetw.webp', caption: '2 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249980/2_Bed_Shared_Apartment4_bpmx2t.webp', caption: '2 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249982/2_Bed_Shared_Apartment5_pc3lbz.webp', caption: '2 bed shared apartment' }
+          
         ],
         bedCount: 2,
         bathroomType: 'shared',
@@ -153,7 +158,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Four-bedroom shared apartment ideal for groups',
         features: ['4 bedrooms', 'Shared kitchen', 'Shared bathrooms', 'Common areas'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '4 bed shared apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250013/4_Bed_Shared_Apartment1_yozl97.webp', caption: '4 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250015/4_Bed_Shared_Apartment2_xk4v0z.webp', caption: '4 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250018/4_Bed_Shared_Apartment3_b6pi2a.webp', caption: '4 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250020/4_Bed_Shared_Apartment4_feenil.webp', caption: '4 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250025/4_Bed_Shared_Apartment6_z7urbk.webp', caption: '4 bed shared apartment' }
         ],
         bedCount: 4,
         bathroomType: 'shared',
@@ -166,7 +175,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Spacious four-bedroom shared apartment with extra living space',
         features: ['4 large bedrooms', 'Spacious kitchen', 'Multiple bathrooms', 'Large common area'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '4 bed large apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249987/4_Bed_Shared_Apartment_Large_1_oexpos.webp', caption: '4 bed large apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249997/4_Bed_Shared_Apartment_Large_2_rewmky.webp', caption: '4 bed large apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754249998/4_Bed_Shared_Apartment_Large_3_ierphg.webp', caption: '4 bed large apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250001/4_Bed_Shared_Apartment_Large_4_ztignf.webp', caption: '4 bed large apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250007/4_Bed_Shared_Apartment_Large_7_uog2f9.webp', caption: '4 bed large apartment' }
         ],
         bedCount: 4,
         bathroomType: 'shared',
@@ -180,7 +193,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Five-bedroom apartment with ensuite bathrooms',
         features: ['5 bedrooms', 'Ensuite bathrooms', 'Shared kitchen', 'Common living area'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed ensuite' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250035/5_Bed_Ensuite1_ofumpb.webp', caption: '5 bed ensuite' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250036/5_Bed_Ensuite2_kaotky.webp', caption: '5 bed ensuite' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250039/5_Bed_Ensuite3_ccdp8w.webp', caption: '5 bed ensuite' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250041/5_Bed_Ensuite4_vlwnn7.webp', caption: '5 bed ensuite' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250044/5_Bed_Ensuite5_swou2s.webp', caption: '5 bed ensuite' }
         ],
         bedCount: 5,
         bathroomType: 'private',
@@ -193,7 +210,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Five-bedroom shared apartment with communal facilities',
         features: ['5 bedrooms', 'Shared bathrooms', 'Large kitchen', 'Study areas'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '5 bed shared apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250052/5_Bed_Shared_Apartment1_ekyyv7.webp', caption: '5 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250055/5_Bed_Shared_Apartment2_a16jri.webp', caption: '5 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250057/5_Bed_Shared_Apartment3_rvk8qi.webp', caption: '5 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250059/5_Bed_Shared_Apartment4_ciwt3u.webp', caption: '5 bed shared apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250065/5_Bed_Shared_Apartment7_kpc5fy.webp', caption: '5 bed shared apartment' }
         ],
         bedCount: 5,
         bathroomType: 'shared',
