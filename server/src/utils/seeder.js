@@ -227,7 +227,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Private single room with ensuite bathroom',
         features: ['Private bedroom', 'Ensuite bathroom', 'Shared kitchen', 'Study desk'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Single ensuite room' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250071/Single_Ensuite1_vlgx7o.webp', caption: 'Single ensuite room' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250074/Single_Ensuite2_bfn1z8.webp', caption: 'Single ensuite room' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250075/Single_Ensuite3_oj83hj.webp', caption: 'Single ensuite room' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250078/Single_Ensuite4_lv2dgk.webp', caption: 'Single ensuite room' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250079/Single_Ensuite5_tgjvtj.webp', caption: 'Single ensuite room' }
         ],
         bedCount: 1,
         bathroomType: 'private',
@@ -240,7 +244,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Self-contained studio apartment',
         features: ['Private studio', 'Kitchenette', 'Private bathroom', 'Study area'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250127/Studio1_ru5gfs.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250129/Studio2_jvuuoc.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250132/Studio3_yj6gxg.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250135/Studio4_miiygb.webp', caption: 'Studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250136/Studio5_bpdkop.webp', caption: 'Studio apartment' }
         ],
         bedCount: 1,
         bathroomType: 'private',
@@ -253,7 +261,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Spacious self-contained studio apartment',
         features: ['Large studio space', 'Full kitchen', 'Private bathroom', 'Extra storage'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Large studio apartment' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250085/Studio_Large_1_aaul89.webp', caption: 'Large studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250096/Studio_Large_2_ugage4.webp', caption: 'Large studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250097/Studio_Large_3_d8nxbx.webp', caption: 'Large studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250100/Studio_Large_4_wce8kd.webp', caption: 'Large studio apartment' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250102/Studio_Large_5_fx3t37.webp', caption: 'Large studio apartment' }
         ],
         bedCount: 1,
         bathroomType: 'private',
@@ -267,7 +279,11 @@ const getSampleProperties = (cities, userId) => [
         description: 'Disability-accessible studio apartment',
         features: ['DDA compliant', 'Accessible bathroom', 'Kitchenette', 'Emergency assistance'],
         images: [
-          { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'DDA studio' }
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250112/Studio_DDA1_lqnrks.webp', caption: 'DDA studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250115/Studio_DDA2_dar721.webp', caption: 'DDA studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250117/Studio_DDA3_cz9mcu.webp', caption: 'DDA studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250120/Studio_DDA4_spjgbh.webp', caption: 'DDA studio' },
+          { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754250121/Studio_DDA5_zpimu3.webp', caption: 'DDA studio' }
         ],
         bedCount: 1,
         bathroomType: 'private',
