@@ -864,7 +864,7 @@ const getSampleProperties = (cities, userId) => [
         features: ['Private bedroom', 'Lower floor', 'Easy access', 'Private facilities'],
         images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower1_atwtgt.webp', caption: '1 bed lower' },
                 { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower2_lyk7fr.webp', caption: '1 bed lower' },
-                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower3_kyxtni.webp', caption: '1 bed lower' }
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower3_kyxtni.webp', caption: '1 bed lower' },
                 { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower4_vexhwa.webp', caption: '1 bed lower' },
                 { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedlower5_mqhhwh.webp', caption: '1 bed lower' }
                 ],
