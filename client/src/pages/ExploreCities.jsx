@@ -68,16 +68,7 @@ const countries = [
       { name: 'Chicago', properties: 0, image: '/assets/chicago.jpg' },
     ],
   },
-  {
-    name: 'UK',
-    flag: '🇬🇧',
-    cities: [
-      { name: 'London', properties: 0, image: '/assets/london.jpg' },
-      { name: 'Manchester', properties: 0, image: '/assets/manchester.jpg' },
-      { name: 'Edinburgh', properties: 0, image: '/assets/edinburgh.jpg' },
-      { name: 'Glasgow', properties: 0, image: '/assets/glasgow.jpg' },
-    ],
-  },
+  
   {
     name: 'Germany',
     flag: '🇩🇪',
