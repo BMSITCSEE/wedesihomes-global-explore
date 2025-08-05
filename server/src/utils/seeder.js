@@ -540,7 +540,7 @@ const getSampleProperties = (cities, userId) => [
       ]
     },
     images: [
-      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'Berkeley Street Building' },
+      { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754241788/berkbig_u3oyet.webp', caption: 'Berkeley Street Building' },
       { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Rooftop Terrace' },
       { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Cinema Room' }
     ],
@@ -557,7 +557,11 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 550, currency: 'AUD$', period: 'week' },
         description: 'Private one-bedroom apartment with full facilities',
         features: ['Private bedroom', 'Private kitchen', 'Private bathroom', 'Living area'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed apartment' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245984/1bedaprt1_oplbhr.webp', caption: '1 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245985/1bedaprt2_iaohdp.webp', caption: '1 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245985/1bedaprt3_lisxnl.webp', caption: '1 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245985/1bedaprt4_vujx1f.webp', caption: '1 bed apartment' }
+                ],
         bedCount: 1, bathroomType: 'private'
       },
       {
@@ -566,7 +570,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 420, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom apartment for sharing',
         features: ['3 bedrooms', 'Shared kitchen', 'Shared bathrooms', 'Common living area'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed apartment' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245985/3bedaprt1_kc2dhh.webp', caption: '3 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245989/3bedaprt2_sj6nv4.webp', caption: '3 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245989/3bedaprt3_dr7bnl.webp', caption: '3 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245990/3bedaprt4_lame0f.webp', caption: '3 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245990/3bedaprt5_nl0vvf.webp', caption: '3 bed apartment' }
+                ],
         bedCount: 3, bathroomType: 'shared'
       },
       {
@@ -575,7 +584,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 450, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom apartment on top floor with premium views',
         features: ['3 bedrooms', 'Top floor location', 'Premium views', 'Shared facilities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed top floor' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245993/3bedaprttopflor1_kpd9df.webp', caption: '3 bed top floor' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245993/3bedaprttopflor2_vwhqy7.webp', caption: '3 bed top floor' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245995/3bedaprttopflor3_dd8lrt.webp', caption: '3 bed top floor' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245996/3bedaprttopflor4_zq0jfy.webp', caption: '3 bed top floor' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245997/3bedaprttopflor5_mao6pi.webp', caption: '3 bed top floor' }
+                ],
         bedCount: 3, bathroomType: 'shared', floor: 'top', hasView: true
       },
       {
@@ -584,7 +598,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 480, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom apartment with private terrace access',
         features: ['3 bedrooms', 'Private terrace', 'Outdoor space', 'Shared facilities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed with terrace' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754245999/3bedaprtwithterrace1_aqb7kf.webp', caption: '3 bed with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246000/3bedaprtwithterrace2_xsyj65.webp', caption: '3 bed with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246001/3bedaprtwithterrace3_pnfqne.webp', caption: '3 bed with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246002/3bedaprtwithterrace4_kvfjqy.webp', caption: '3 bed with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246004/3bedaprtwithterrace5_s759ch.webp', caption: '3 bed with terrace' }
+                ],
         bedCount: 3, bathroomType: 'shared', hasTerrace: true
       },
       {
@@ -593,7 +612,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 500, currency: 'AUD$', period: 'week' },
         description: 'Upper floor three-bedroom apartment with terrace',
         features: ['3 bedrooms', 'Upper floor', 'Private terrace', 'Premium location'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed terrace upper' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246005/3bedaprtwithterraceup1_sf5kot.webp', caption: '3 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246006/3bedaprtwithterraceup2_auccqm.webp', caption: '3 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246008/3bedaprtwithterraceup3_a0uhhu.webp', caption: '3 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246009/3bedaprtwithterraceup4_e7cohw.webp', caption: '3 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246010/3bedaprtwithterraceup5_w9ewvg.webp', caption: '3 bed terrace upper' }
+                ],
         bedCount: 3, bathroomType: 'shared', hasTerrace: true, floor: 'upper'
       },
       {
@@ -602,7 +626,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 470, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom apartment with ensuite bathrooms',
         features: ['3 bedrooms', 'Ensuite bathrooms', 'Shared kitchen', 'Privacy'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed ensuite' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246011/3bedensuiteaprt1_gorrxe.webp', caption: '3 bed ensuite' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246014/3bedensuiteaprt2_odyrxd.webp', caption: '3 bed ensuite' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246015/3bedensuiteaprt3_w7ccim.webp', caption: '3 bed ensuite' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246017/3bedensuiteaprt4_wmylof.webp', caption: '3 bed ensuite' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246024/3bedensuiteaprt5_uhqhto.webp', caption: '3 bed ensuite' }
+                ],
         bedCount: 3, bathroomType: 'private'
       },
       {
@@ -611,7 +640,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 520, currency: 'AUD$', period: 'week' },
         description: 'Premium three-bedroom ensuite apartment with terrace',
         features: ['3 bedrooms', 'Ensuite bathrooms', 'Private terrace', 'Premium amenities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed ensuite terrace' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246025/3bedensuiteaprtwithterrace1_lvelux.webp', caption: '3 bed ensuite terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246026/3bedensuiteaprtwithterrace2_anec9d.webp', caption: '3 bed ensuite terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246028/3bedensuiteaprtwithterrace3_ftl0eq.webp', caption: '3 bed ensuite terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246029/3bedensuiteaprtwithterrace4_nirmvs.webp', caption: '3 bed ensuite terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246030/3bedensuiteaprtwithterrace5_xad6w7.webp', caption: '3 bed ensuite terrace' }
+                ],
         bedCount: 3, bathroomType: 'private', hasTerrace: true
       },
       {
@@ -620,7 +654,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 350, currency: 'AUD$', period: 'week' },
         description: 'Spacious six-bedroom townhouse for large groups',
         features: ['6 bedrooms', 'Multiple bathrooms', 'Full kitchen', 'Living areas', 'Outdoor space'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed townhouse' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246032/6bedtownhouse1_hw1nn7.webp', caption: '6 bed townhouse' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246033/6bedtownhouse2_hgksuv.webp', caption: '6 bed townhouse' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246035/6bedtownhouse3_oeihxm.webp', caption: '6 bed townhouse' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246036/6bedtownhouse4_loqtlo.webp', caption: '6 bed townhouse' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246037/6bedtownhouse5_dbz5wz.webp', caption: '6 bed townhouse' },
+                ],
         bedCount: 6, bathroomType: 'shared'
       },
       {
@@ -629,7 +668,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 380, currency: 'AUD$', period: 'week' },
         description: 'Six-bedroom townhouse with stunning city views',
         features: ['6 bedrooms', 'City views', 'Multiple levels', 'Premium location'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed townhouse city view' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246039/6bedtownhousecityview1_b8zmez.webp', caption: '6 bed townhouse city view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246040/6bedtownhousecityview2_jyj717.webp', caption: '6 bed townhouse city view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246042/6bedtownhousecityview3_nawyh5.webp', caption: '6 bed townhouse city view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246043/6bedtownhousecityview4_uhe5kj.webp', caption: '6 bed townhouse city view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246044/6bedtownhousecityview5_uasej9.webp', caption: '6 bed townhouse city view' }
+                ],
         bedCount: 6, bathroomType: 'shared', hasView: true, viewType: 'city'
       },
       {
@@ -638,7 +682,11 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 520, currency: 'AUD$', period: 'week' },
         description: 'Disability-accessible studio apartment',
         features: ['DDA compliant', 'Accessible facilities', 'Private bathroom', 'Kitchenette'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'DDA studio' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246046/ddastudio1_zsfxr7.webp', caption: 'DDA studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246047/ddastudio2_lgjvi2.webp', caption: 'DDA studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246048/ddastudio3_kqoqyu.webp', caption: 'DDA studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246049/ddastudio4_mlregv.webp', caption: 'DDA studio' }
+                ],
         bedCount: 1, bathroomType: 'private', isDDA: true
       },
       {
@@ -647,7 +695,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 580, currency: 'AUD$', period: 'week' },
         description: 'Premium executive studio with high-end finishes',
         features: ['Executive finishes', 'Premium appliances', 'Large space', 'Study area'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246052/executivestudio1_sbcpoc.webp', caption: 'Executive studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246052/executivestudio2_b0s7zt.webp', caption: 'Executive studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246053/executivestudio3_vneage.webp', caption: 'Executive studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246056/executivestudio4_evsbuq.webp', caption: 'Executive studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246057/executivestudio5_xp2d2y.webp', caption: 'Executive studio' }
+                ],
         bedCount: 1, bathroomType: 'private', roomSize: 'executive'
       },
       {
@@ -656,7 +709,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 560, currency: 'AUD$', period: 'week' },
         description: 'Executive studio on lower floor',
         features: ['Executive finishes', 'Lower floor', 'Easy access', 'Premium amenities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio lower' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246057/executivestudiolow1_fbkmnl.webp', caption: 'Executive studio lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246060/executivestudiolow2_nhnxts.webp', caption: 'Executive studio lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246061/executivestudiolow3_kujfll.webp', caption: 'Executive studio lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246062/executivestudiolow4_vjlyzb.webp', caption: 'Executive studio lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246064/executivestudiolow5_wfp4bd.webp', caption: 'Executive studio lower' }
+                ],
         bedCount: 1, bathroomType: 'private', roomSize: 'executive', floor: 'lower'
       },
       {
@@ -665,7 +723,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 620, currency: 'AUD$', period: 'week' },
         description: 'Executive studio with stunning CBD views',
         features: ['Executive finishes', 'CBD views', 'Premium location', 'Large windows'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio CBD view' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246065/executivestudiowithcbdview1_huthoh.webp', caption: 'Executive studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246066/executivestudiowithcbdview2_n4msg8.webp', caption: 'Executive studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246068/executivestudiowithcbdview3_c35xr3.webp', caption: 'Executive studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246069/executivestudiowithcbdview4_h3ccgk.webp', caption: 'Executive studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246071/executivestudiowithcbdview5_xbz7fn.webp', caption: 'Executive studio CBD view' }
+                ],
         bedCount: 1, bathroomType: 'private', roomSize: 'executive', hasView: true, viewType: 'cbd'
       },
       {
@@ -674,7 +737,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 650, currency: 'AUD$', period: 'week' },
         description: 'Executive studio with private terrace',
         features: ['Executive finishes', 'Private terrace', 'Outdoor space', 'Premium amenities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio terrace' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246073/executivestudiowithterrace1_xxxir5.webp', caption: 'Executive studio terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246074/executivestudiowithterrace2_kcqz5r.webp', caption: 'Executive studio terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246074/executivestudiowithterrace3_zdqbbf.webp', caption: 'Executive studio terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246113/executivestudiowithterrace4_i6defs.webp', caption: 'Executive studio terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246113/executivestudiowithterrace5_ezd8sn.webp', caption: 'Executive studio terrace' }
+                ],
         bedCount: 1, bathroomType: 'private', roomSize: 'executive', hasTerrace: true
       },
       {
@@ -683,7 +751,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 670, currency: 'AUD$', period: 'week' },
         description: 'Upper floor executive studio with terrace',
         features: ['Executive finishes', 'Upper floor', 'Private terrace', 'Premium views'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Executive studio terrace upper' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246114/executivestudiowithterraceup1_mzxdma.webp', caption: 'Executive studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246114/executivestudiowithterraceup2_dzwqxt.webp', caption: 'Executive studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246118/executivestudiowithterraceup3_awqera.webp', caption: 'Executive studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246119/executivestudiowithterraceup4_jowh8r.webp', caption: 'Executive studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246120/executivestudiowithterraceup5_n2sb28.webp', caption: 'Executive studio terrace upper' }
+                ],
         bedCount: 1, bathroomType: 'private', roomSize: 'executive', hasTerrace: true, floor: 'upper'
       },
       {
@@ -692,7 +765,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 540, currency: 'AUD$', period: 'week' },
         description: 'Premium studio apartment with modern amenities',
         features: ['Premium finishes', 'Modern appliances', 'Spacious layout', 'Study area'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Premium studio' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246123/premiumstudio1_qmzz7y.webp', caption: 'Premium studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246124/premiumstudio2_mjwi5l.webp', caption: 'Premium studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246125/premiumstudio3_ywode7.webp', caption: 'Premium studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246128/premiumstudio4_z0roew.webp', caption: 'Premium studio' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246129/premiumstudio5_fmxf3s.webp', caption: 'Premium studio' }
+                ],
         bedCount: 1, bathroomType: 'private', roomSize: 'premium'
       },
       {
@@ -701,7 +779,11 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 580, currency: 'AUD$', period: 'week' },
         description: 'Premium studio with CBD views',
         features: ['Premium finishes', 'CBD views', 'Large windows', 'Modern amenities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Premium studio CBD view' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246129/premiumstudiowithcbdview1_vd3dih.webp', caption: 'Premium studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246133/premiumstudiowithcbdview2_zysytm.webp', caption: 'Premium studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246133/premiumstudiowithcbdview3_nvpfis.webp', caption: 'Premium studio CBD view' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246135/premiumstudiowithcbdview4_jxgu6i.webp', caption: 'Premium studio CBD view' }
+                ],
                 bedCount: 1, bathroomType: 'private', roomSize: 'premium', hasView: true, viewType: 'cbd'
       },
       {
@@ -710,7 +792,11 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 520, currency: 'AUD$', period: 'week' },
         description: 'Studio apartment with private terrace access',
         features: ['Private terrace', 'Outdoor space', 'Kitchenette', 'Natural light'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio with terrace' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246136/studiowithterrace1_lp65tz.webp', caption: 'Studio with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246139/studiowithterrace2_syg6jj.webp', caption: 'Studio with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246140/studiowithterrace3_dbhrer.webp', caption: 'Studio with terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246141/studiowithterrace4_oybzhl.webp', caption: 'Studio with terrace' }
+                ],
         bedCount: 1, bathroomType: 'private', hasTerrace: true
       },
       {
@@ -719,7 +805,11 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 540, currency: 'AUD$', period: 'week' },
         description: 'Upper floor studio with terrace and city views',
         features: ['Upper floor', 'Private terrace', 'City views', 'Premium location'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: 'Studio terrace upper' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246143/studiowithterraceup1_lbslag.webp', caption: 'Studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246146/studiowithterraceup2_sqbbkm.webp', caption: 'Studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246147/studiowithterraceup3_wikypk.webp', caption: 'Studio terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754246148/studiowithterraceup4_yiowmg.webp', caption: 'Studio terrace upper' }
+                ],
         bedCount: 1, bathroomType: 'private', hasTerrace: true, floor: 'upper'
       }
     ],
@@ -755,7 +845,7 @@ const getSampleProperties = (cities, userId) => [
       ]
     },
     images: [
-      { url: 'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg', caption: 'University Square Building' },
+      { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237882/univbig_iz4slr.webp', caption: 'University Square Building' },
       { url: 'https://res.cloudinary.com/demo/image/upload/v1440095286/tkfvgr7fmlg3eamzsgaa.jpg', caption: 'Study Areas' },
       { url: 'https://res.cloudinary.com/demo/image/upload/v1440095261/rkyjkfgwvg0l2xhqmtln.jpg', caption: 'Common Facilities' }
     ],
