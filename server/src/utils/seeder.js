@@ -862,7 +862,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 500, currency: 'AUD$', period: 'week' },
         description: 'One-bedroom apartment on lower floor with easy access',
         features: ['Private bedroom', 'Lower floor', 'Easy access', 'Private facilities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed lower' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower1_atwtgt.webp', caption: '1 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower2_lyk7fr.webp', caption: '1 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower3_kyxtni.webp', caption: '1 bed lower' }
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedlower4_vexhwa.webp', caption: '1 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedlower5_mqhhwh.webp', caption: '1 bed lower' }
+                ],
         bedCount: 1, bathroomType: 'private', floor: 'lower'
       },
       {
@@ -871,7 +876,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 520, currency: 'AUD$', period: 'week' },
         description: 'One-bedroom apartment on upper floor with better views',
         features: ['Private bedroom', 'Upper floor', 'Better views', 'Private facilities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed upper' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedupper1_rsubej.webp', caption: '1 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedupper2_nrjkaq.webp', caption: '1 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedupper3_w0lhgp.webp', caption: '1 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237774/1bedupper4_aj0yck.webp', caption: '1 bed upper' }
+               // { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed upper' }
+                ],
         bedCount: 1, bathroomType: 'private', floor: 'upper'
       },
       {
@@ -880,7 +890,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 580, currency: 'AUD$', period: 'week' },
         description: 'One-bedroom apartment with private terrace',
         features: ['Private bedroom', 'Private terrace', 'Outdoor space', 'Premium location'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '1 bed terrace' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedwithterr1_w1k1f8.webp', caption: '1 bed terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedwithterr2_qzb2iu.webp', caption: '1 bed terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedwithterr3_mbxxn9.webp', caption: '1 bed terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedwithterr4_wlc1sh.webp', caption: '1 bed terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/1bedwithterr5_yemn4u.webp', caption: '1 bed terrace' }
+                ],
         bedCount: 1, bathroomType: 'private', hasTerrace: true
       },
       {
@@ -889,7 +904,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 420, currency: 'AUD$', period: 'week' },
         description: 'Two-bedroom apartment perfect for sharing',
         features: ['2 bedrooms', 'Shared facilities', 'Common living area', 'Study spaces'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed apartment' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/2bedapar1_pz0xk1.webp', caption: '2 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/2bedapar2_dc04jz.webp', caption: '2 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237775/2bedapar3_n1zsm5.webp', caption: '2 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237776/2bedapar4_ckyyb4.webp', caption: '2 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237778/2bedapar5_q3evmx.webp', caption: '2 bed apartment' }
+                ],
         bedCount: 2, bathroomType: 'shared'
       },
       {
@@ -898,7 +918,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 450, currency: 'AUD$', period: 'week' },
         description: 'Lower floor two-bedroom apartment with terrace access',
         features: ['2 bedrooms', 'Lower floor', 'Terrace access', 'Easy access'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed terrace lower' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237778/2bedaparwithterr1_prxz71.webp', caption: '2 bed terrace lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237778/2bedaparwithterr2_zdmnin.webp', caption: '2 bed terrace lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237778/2bedaparwithterr3_sue9i4.webp', caption: '2 bed terrace lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237778/2bedaparwithterr4_ef3ajt.webp', caption: '2 bed terrace lower' }
+               // { url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed terrace lower' }
+                ],
         bedCount: 2, bathroomType: 'shared', hasTerrace: true, floor: 'lower'
       },
       {
@@ -907,7 +932,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 480, currency: 'AUD$', period: 'week' },
         description: 'Upper floor two-bedroom apartment with terrace and views',
         features: ['2 bedrooms', 'Upper floor', 'Private terrace', 'Better views'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '2 bed terrace upper' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237779/2bedaparwithterrupper1_brt39x.webp', caption: '2 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237779/2bedaparwithterrupper2_zhhmys.webp', caption: '2 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237780/2bedaparwithterrupper3_warzqr.webp', caption: '2 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237781/2bedaparwithterrupper4_f6evrh.webp', caption: '2 bed terrace upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237781/2bedaparwithterrupper5_kgicsl.webp', caption: '2 bed terrace upper' }
+                ],
         bedCount: 2, bathroomType: 'shared', hasTerrace: true, floor: 'upper'
       },
       {
@@ -916,7 +946,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 380, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom apartment on lower floor',
         features: ['3 bedrooms', 'Lower floor', 'Shared facilities', 'Easy access'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed lower' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237781/3bedaparlower1_vmuxgo.webp', caption: '3 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237781/3bedaparlower2_oq4gtq.webp', caption: '3 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237781/3bedaparlower3_xvn9ug.webp', caption: '3 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237782/3bedaparlower4_bqwwss.webp', caption: '3 bed lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237782/3bedaparlower5_pgonge.webp', caption: '3 bed lower' }
+                ],
         bedCount: 3, bathroomType: 'shared', floor: 'lower'
       },
       {
@@ -925,7 +960,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 400, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom apartment on upper floor with views',
         features: ['3 bedrooms', 'Upper floor', 'Better views', 'Shared facilities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed upper' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237783/3bedaparupper1_mx0vuo.webp', caption: '3 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237784/3bedaparupper2_xoqgss.webp', caption: '3 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237784/3bedaparupper3_drrq3f.webp', caption: '3 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237784/3bedaparupper4_ah3usd.webp', caption: '3 bed upper' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237784/3bedaparupper5_r4vnlu.webp', caption: '3 bed upper' }
+                ],
         bedCount: 3, bathroomType: 'shared', floor: 'upper'
       },
       {
@@ -934,7 +974,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 460, currency: 'AUD$', period: 'week' },
         description: 'Three-bedroom duplex apartment with private terrace',
         features: ['3 bedrooms', 'Duplex layout', 'Private terrace', 'Multiple levels'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '3 bed duplex terrace' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237784/3bedduplexwithterr1_e9kx2l.webp', caption: '3 bed duplex terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237785/3bedduplexwithterr2_jkiaqt.webp', caption: '3 bed duplex terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237785/3bedduplexwithterr3_trmwlh.webp', caption: '3 bed duplex terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237786/3bedduplexwithterr4_xlqizi.webp', caption: '3 bed duplex terrace' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237786/3bedduplexwithterr5_sil6iu.webp', caption: '3 bed duplex terrace' }
+                ],
         bedCount: 3, bathroomType: 'shared', hasTerrace: true
       },
       {
@@ -943,7 +988,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 350, currency: 'AUD$', period: 'week' },
         description: 'Four-bedroom apartment for group living',
         features: ['4 bedrooms', 'Shared facilities', 'Large common area', 'Group friendly'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '4 bed apartment' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237787/4bedapar1_ix864k.webp', caption: '4 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237787/4bedapar2_ez0ahy.webp', caption: '4 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237787/4bedapar3_tzyouu.webp', caption: '4 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237788/4bedapar4_kxdpj6.webp', caption: '4 bed apartment' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237788/4bedapar5_yx6xh7.webp', caption: '4 bed apartment' }
+                ],
         bedCount: 4, bathroomType: 'shared'
       },
       {
@@ -952,7 +1002,12 @@ const getSampleProperties = (cities, userId) => [
         price: { amount: 280, currency: 'AUD$', period: 'week' },
         description: 'Budget-friendly six-bed apartment with bunk beds on lower floor',
         features: ['6 bunk beds', 'Lower floor', 'Budget option', 'Shared facilities'],
-        images: [{ url: 'https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill/sample', caption: '6 bed bunk lower' }],
+        images: [{ url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237788/6bedaparlower1_aqdldb.webp', caption: '6 bed bunk lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237789/6bedaparlower2_rxpvov.webp', caption: '6 bed bunk lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237790/6bedaparlower3_erjtwr.webp', caption: '6 bed bunk lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237790/6bedaparlower4_qmakim.webp', caption: '6 bed bunk lower' },
+                { url: 'https://res.cloudinary.com/dcwhtdkpb/image/upload/v1754237790/6bedaparlower5_zgmhaa.webp', caption: '6 bed bunk lower' }
+                ],
         bedCount: 6, bathroomType: 'shared', bedType: 'bunk', floor: 'lower'
       },
       {
