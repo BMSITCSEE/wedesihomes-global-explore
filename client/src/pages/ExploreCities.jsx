@@ -34,7 +34,7 @@ const countries = [
       { name: 'London', properties: 0, image: '/assets/london.jpg' },
       { name: 'Manchester', properties: 0, image: '/assets/manchester.jpg' },
       { name: 'Birmingham', properties: 0, image: '/assets/birmingham.jpg' },
-      { name: 'Edinburgh', properties: 0, image: '/assets/edinburgh.jpg' },
+      { name: 'Glasgow', properties: 0, image: '/assets/edinburgh.jpg' },
     ],
   },
   {
@@ -56,6 +56,107 @@ const countries = [
       { name: 'Adelaide', properties: 1, image: '/assets/brisbane.jpg' },
       { name: 'Perth', properties: 1, image: '/assets/perth.jpg' },
     ],
+  },
+  // Append these to the countries array (or replace existing ones like UK)
+  {
+    name: 'USA',
+    flag: '🇺🇸',
+    cities: [
+      { name: 'Boston', properties: 0, image: '/assets/boston.jpg' },
+      { name: 'New York', properties: 0, image: '/assets/new-york.jpg' },
+      { name: 'San Francisco', properties: 0, image: '/assets/san-francisco.jpg' },
+      { name: 'Chicago', properties: 0, image: '/assets/chicago.jpg' },
+    ],
+  },
+  {
+    name: 'UK',
+    flag: '🇬🇧',
+    cities: [
+      { name: 'London', properties: 0, image: '/assets/london.jpg' },
+      { name: 'Manchester', properties: 0, image: '/assets/manchester.jpg' },
+      { name: 'Edinburgh', properties: 0, image: '/assets/edinburgh.jpg' },
+      { name: 'Glasgow', properties: 0, image: '/assets/glasgow.jpg' },
+    ],
+  },
+  {
+    name: 'Germany',
+    flag: '🇩🇪',
+    cities: [
+      { name: 'Munich', properties: 0, image: '/assets/munich.jpg' },
+      { name: 'Berlin', properties: 0, image: '/assets/berlin.jpg' },
+      { name: 'Aachen', properties: 0, image: '/assets/aachen.jpg' },
+      { name: 'Frankfurt', properties: 0, image: '/assets/frankfurt.jpg' },
+    ],
+  },
+  {
+    name: 'Spain',
+    flag: '🇪🇸',
+    cities: [
+      { name: 'Madrid', properties: 0, image: '/assets/madrid.jpg' },
+      { name: 'Barcelona', properties: 0, image: '/assets/barcelona.jpg' },
+      { name: 'Valencia', properties: 0, image: '/assets/valencia.jpg' },
+      { name: 'Granada', properties: 0, image: '/assets/granada.jpg' },
+    ],
+  },
+  {
+    name: 'Italy',
+    flag: '🇮🇹',
+    cities: [
+      { name: 'Milan', properties: 0, image: '/assets/milan.jpg' },
+      { name: 'Rome', properties: 0, image: '/assets/rome.jpg' },
+      { name: 'Florence', properties: 0, image: '/assets/florence.jpg' },
+      { name: 'Bologna', properties: 0, image: '/assets/bologna.jpg' },
+    ],
+  },
+  {
+    name: 'France',
+    flag: '🇫🇷',
+    cities: [
+      { name: 'Paris', properties: 0, image: '/assets/paris.jpg' },
+      { name: 'Lyon', properties: 0, image: '/assets/lyon.jpg' },
+      { name: 'Toulouse', properties: 0, image: '/assets/toulouse.jpg' },
+      { name: 'Montpellier', properties: 0, image: '/assets/montpellier.jpg' },
+    ],
+  },
+  {
+    name: 'Portugal',
+    flag: '🇵🇹',
+    cities: [
+      { name: 'Lisbon', properties: 0, image: '/assets/lisbon.jpg' },
+      { name: 'Porto', properties: 0, image: '/assets/porto.jpg' },
+      { name: 'Coimbra', properties: 0, image: '/assets/coimbra.jpg' },
+      { name: 'Braga', properties: 0, image: '/assets/braga.jpg' },
+    ],
+  },
+  {
+    name: 'UAE',
+    flag: '🇦🇪',
+    cities: [
+      { name: 'Dubai', properties: 0, image: '/assets/dubai.jpg' },
+      { name: 'Sharjah', properties: 0, image: '/assets/sharjah.jpg' },
+      { name: 'Ajman', properties: 0, image: '/assets/ajman.jpg' },
+      { name: 'Abu Dhabi', properties: 0, image: '/assets/abu-dhabi.jpg' },
+    ],
+  },
+  {
+    name: 'Austria',
+    flag: '🇦🇹',
+    cities: [
+      { name: 'Vienna', properties: 0, image: '/assets/vienna.jpg' },
+      { name: 'Graz', properties: 0, image: '/assets/graz.jpg' },
+      { name: 'Innsbruck', properties: 0, image: '/assets/innsbruck.jpg' },
+      { name: 'Salzburg', properties: 0, image: '/assets/salzburg.jpg' },
+    ],
+  },
+  {
+    name: 'Japan',
+    flag: '🇯🇵',
+    cities: [
+      { name: 'Tokyo', properties: 0, image: '/assets/tokyo.jpg' },
+      { name: 'Kyoto', properties: 0, image: '/assets/kyoto.jpg' },
+      { name: 'Osaka', properties: 0, image: '/assets/osaka.jpg' },
+      { name: 'Fukuoka', properties: 0, image: '/assets/fukuoka.jpg' },
+    ],
   },
 ];
 
