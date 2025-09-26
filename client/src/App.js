@@ -50,6 +50,8 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
 
+            <Route path="/reviews" element={<Reviews />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
