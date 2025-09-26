@@ -25,6 +25,9 @@ import SignupForm from './components/auth/SignupForm';
 
 import { AuthProvider } from './context/AuthContext';
 
+//FOR review page
+import Reviews from './pages/Reviews';
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
